@@ -1,0 +1,62 @@
+// main: Spray.less
+/*@base: #f938ab;
+
+.box-shadow(@style, @c) when (iscolor(@c)) {
+  -webkit-box-shadow: @style @c;
+  box-shadow:         @style @c;
+}
+.box-shadow(@style, @alpha: 50%) when (isnumber(@alpha)) {
+  .box-shadow(@style, rgba(0, 0, 0, @alpha));
+}
+.box {
+  color: saturate(@base, 5%);
+  border-color: lighten(@base, 30%);
+  div { .box-shadow(0 0 5px, 30%) }
+}*/
+
+
+
+/*@secondary:spin(@primary,180);
+@tertiary:darken(spin(@primary,180), 5%);
+@quaternary:darken(@primary,20%);*/
+
+
+@secondary:lighten(@primary,15%);
+@tertiary:darken(@primary,15%);
+@quaternary:mix(@tertiary,#000);
+.text-color(@color){
+     color:contrast(@color,@quaternary,lighten(@secondary,30%),70%);
+}
+
+.primary{
+     background: @primary;
+     .text-color(@primary);
+     &.hover:hover{
+          background:lighten(@primary,15%);
+          .text-color(lighten(@primary,15%));
+     }
+}
+.secondary{
+     background: @secondary;
+     .text-color(@secondary);
+     &.hover:hover{
+          background:lighten(@secondary,15%);
+          .text-color(lighten(@secondary,15%));
+     }
+}
+.tertiary{
+     background: @tertiary;
+     .text-color(@tertiary);
+     &.hover:hover{
+          background:lighten(@tertiary,15%);
+          .text-color(lighten(@tertiary,15%));
+     }
+}
+.quaternary{
+     background: @quaternary;
+     .text-color(@quaternary);
+     &.hover:hover{
+          background:lighten(@quaternary,15%);
+          .text-color(lighten(@quaternary,15%));
+     }
+}

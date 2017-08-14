@@ -1,0 +1,23 @@
+//main:Spray.less
+.font-nav(@size){
+     font: @size Impact, Charcoal, sans-serif;
+}
+.box-shadow(@color){
+     box-shadow: 0 0 50px @color;
+}
+.border(@color, @isrounded){
+     border: 1px solid @color;
+}
+.border(@color, @isrounded) when (@isrounded=1){
+     border-radius: 10px;
+}
+.show(@length, @timing){
+     visibility: visible;
+     opacity: 1;
+     transition: opacity @length @timing;
+}
+.hide(@length, @timing){
+     visibility: hidden;
+     opacity: 0;
+     transition: visibility 0s @length,opacity 1s @timing;
+}
