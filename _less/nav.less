@@ -1,22 +1,11 @@
 // main: Spray.less
-/*@base: #f938ab;
 
-.box-shadow(@style, @c) when (iscolor(@c)) {
-  -webkit-box-shadow: @style @c;
-  box-shadow:         @style @c;
-}
-.box-shadow(@style, @alpha: 50%) when (isnumber(@alpha)) {
-  .box-shadow(@style, rgba(0, 0, 0, @alpha));
-}
-.box {
-  color: saturate(@base, 5%);
-  border-color: lighten(@base, 30%);
-  div { .box-shadow(0 0 5px, 30%) }
-}*/
-
+/*   Standard style refreshes for page.
+     (Defaults box-sizing for all tags)      */
 *, *:before, *:after{
      box-sizing: border-box;
 }
+/*   (Handles odd spacing for child elements of the HTML or Body tags)     */
 html,body{
      margin: 0;
      padding: 0;
@@ -25,14 +14,22 @@ html,body{
      width: 100%;
      height: 100%;
 }
+/*   Wrapper for nav contents.
+     (This is how the nav width is consistent with the page main element)  */
+.nav-wrapper{
+     display: flex;
+     flex-direction: row;
+     flex-basis: @pagewidth;
+     max-width: @pagewidth;
+     justify-content: space-between;
+}
+/*   Nav tag and children element styling    */
 nav {
      display: flex;
-
      justify-content: center;
      height: @navheight;
-     //background: #909;
      .font-nav(20px);
-     .box-shadow(@tertiary);
+     .box-shadow(@navshadowcolor);
      ul{
           display: flex;
           list-style: none;
@@ -42,26 +39,21 @@ nav {
           cursor: pointer;
           li:not(.no-link){
                display: inherit;
+               overflow: hidden;
+               .border(none,1);
                a{
                     padding: 10px;
                }
-               //background-color: #009;
                margin: 10px;
-               .border(none,1);
 
                &.sub-menu{
-                    //padding: 10px;
-                    //background: #999;
                     flex-direction: column;
-                    //justify-content:flex-start;
-                    //align-items: flex-end;
                     &:hover{
                          ul{
                               .show(1s, ease-out);
                          }
                     }
                     >a:after{
-                         //color:#9f3;
                          padding:none;
                          margin:none;
                          content:' ▾';
@@ -72,7 +64,6 @@ nav {
                          position: absolute;
                          flex-direction: column;
                          .hide(1s, ease-out);
-                         //background: #09f;
                          li{
                               margin: 0;
                               padding: 0;
@@ -85,11 +76,4 @@ nav {
                }
           }
      }
-}
-.nav-wrapper{
-     display: flex;
-     flex-direction: row;
-     flex-basis: @pagewidth;
-     max-width: @pagewidth;
-     justify-content: space-between;
 }

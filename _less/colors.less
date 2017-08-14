@@ -1,33 +1,19 @@
 // main: Spray.less
-/*@base: #f938ab;
-
-.box-shadow(@style, @c) when (iscolor(@c)) {
-  -webkit-box-shadow: @style @c;
-  box-shadow:         @style @c;
-}
-.box-shadow(@style, @alpha: 50%) when (isnumber(@alpha)) {
-  .box-shadow(@style, rgba(0, 0, 0, @alpha));
-}
-.box {
-  color: saturate(@base, 5%);
-  border-color: lighten(@base, 30%);
-  div { .box-shadow(0 0 5px, 30%) }
-}*/
-
-
-
-/*@secondary:spin(@primary,180);
-@tertiary:darken(spin(@primary,180), 5%);
-@quaternary:darken(@primary,20%);*/
-
-
+//   These define the theme colors built from the @primary color.
+//   It's recommended that you stick to LESS color functions for changes.
+//   Currently, the pallete consists of shades of the @primary color.
+//   These colors can be modified with LESS color functions to provide
+//   complimentary colors instead.
 @secondary:lighten(@primary,15%);
 @tertiary:darken(@primary,15%);
 @quaternary:mix(@tertiary,#000);
+//   Mixin for determining how much contrast is applied to text.
 .text-color(@color){
      color:contrast(@color,@quaternary,lighten(@secondary,30%),70%);
 }
-
+//   Selectors that apply appropriate styles for each color.
+//   Any hoverable will be highlighted based off their design color.
+//   Possible future modification: shorten classes to .pri, .sec, .ter, .qua
 .primary{
      background: @primary;
      .text-color(@primary);
