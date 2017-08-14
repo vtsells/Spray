@@ -1,36 +1,36 @@
 /*   Selectors that apply appropriate styles for each color.
      Any hoverable will be highlighted based off their design color.  */
 .primary {
-  background: #18d;
-  color: #ffffff;
+  background: #902;
+  color: #ffe5eb;
 }
 .primary.hover:hover {
-  background: #49abf1;
-  color: #ffffff;
+  background: #e50033;
+  color: #ffe5eb;
 }
 .secondary {
-  background: #49abf1;
-  color: #ffffff;
+  background: #e50033;
+  color: #ffe5eb;
 }
 .secondary.hover:hover {
-  background: #90ccf7;
-  color: #062e4b;
+  background: #ff3360;
+  color: #ffe5eb;
 }
 .tertiary {
-  background: #0c5c96;
-  color: #ffffff;
+  background: #4d0011;
+  color: #ffe5eb;
 }
 .tertiary.hover:hover {
-  background: #1188dd;
-  color: #ffffff;
+  background: #990022;
+  color: #ffe5eb;
 }
 .quaternary {
-  background: #062e4b;
-  color: #ffffff;
+  background: #260009;
+  color: #ffe5eb;
 }
 .quaternary.hover:hover {
-  background: #0b5a92;
-  color: #ffffff;
+  background: #73001a;
+  color: #ffe5eb;
 }
 /*   Standard style refreshes for page.
      (Defaults box-sizing for all tags)      */
@@ -66,7 +66,7 @@ nav {
   justify-content: center;
   height: 70px;
   font: 20px Impact, Charcoal, sans-serif;
-  box-shadow: 0 0 50px #062e4b;
+  box-shadow: 0 0 50px #260009;
 }
 nav ul {
   display: flex;
@@ -78,7 +78,6 @@ nav ul {
 nav ul li:not(.no-link) {
   display: inherit;
   overflow: hidden;
-  border-radius: 10px;
   margin: 10px;
 }
 nav ul li:not(.no-link) a {
@@ -115,6 +114,7 @@ nav ul li:not(.no-link).sub-menu ul li a {
   margin: 0;
   padding: 0;
 }
+/*   Positioning wrapper classes  */
 .left {
   display: flex;
   justify-content: flex-start;
@@ -126,4 +126,8 @@ nav ul li:not(.no-link).sub-menu ul li a {
 .center {
   display: flex;
   justify-content: center;
+}
+/*  Styling classes */
+.rounded {
+  border-radius: 10px;
 }
