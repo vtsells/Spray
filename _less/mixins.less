@@ -1,16 +1,23 @@
 //main:Spray.less
+//   These are all easily accessible mixins for modifying certain
+//   design-centric styles
+
+//   affects only the font in the nav element
 .font-nav(@size){
      font: @size Impact, Charcoal, sans-serif;
 }
+//   affects all box shadows
 .box-shadow(@color){
      box-shadow: 0 0 50px @color;
 }
+//   affects all borders, with options for colored, non-visible, or rounded
 .border(@color, @isrounded) when (iscolor(@color)){
      border: 1px solid @color;
 }
 .border(@color, @isrounded) when (@isrounded=1){
      border-radius: 10px;
 }
+//   show/hide css transitions
 .show(@length, @timing){
      visibility: visible;
      opacity: 1;

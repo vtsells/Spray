@@ -8,8 +8,9 @@
 @tertiary:darken(@primary,15%);
 @quaternary:mix(@tertiary,#000);
 //   Mixin for determining how much contrast is applied to text.
+//   Modify this to increase or decrease text contrast
 .text-color(@color){
-     color:contrast(@color,@quaternary,lighten(@secondary,30%),70%);
+     color:contrast(@color,@quaternary,lighten(@secondary,50%),50%);
 }
 //   Selectors that apply appropriate styles for each color.
 //   Any hoverable will be highlighted based off their design color.
