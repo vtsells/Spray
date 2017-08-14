@@ -4,6 +4,8 @@
      (Defaults box-sizing for all tags)      */
 *, *:before, *:after{
      box-sizing: border-box;
+     margin:0;
+     padding:0;
 }
 /*   (Handles odd spacing for child elements of the HTML or Body tags)     */
 html,body{
@@ -24,6 +26,7 @@ html,body{
      justify-content: space-between;
 }
 /*   Nav tag and children element styling    */
+//   Needs refactoring
 nav {
      display: flex;
      justify-content: center;
@@ -36,16 +39,15 @@ nav {
           align-items: center;
           margin: 0;
           padding: 0;
-          cursor: pointer;
           li:not(.no-link){
                display: inherit;
                overflow: hidden;
                .border(none,1);
+               margin: 10px;
                a{
                     padding: 10px;
+                    cursor: pointer;
                }
-               margin: 10px;
-
                &.sub-menu{
                     flex-direction: column;
                     &:hover{
@@ -54,13 +56,16 @@ nav {
                          }
                     }
                     >a:after{
-                         padding:none;
-                         margin:none;
+                         padding:0;
+                         margin:0;
+                         //   for some reason, this increases the size of the a element
+                         //   It's slightly larger than the other links.  It's irritating
+                         //   font-size 16px is a hack
+                         font-size: 16px;
                          content:' ▾';
                     }
                     ul {
                          display: flex;
-
                          position: absolute;
                          flex-direction: column;
                          .hide(1s, ease-out);

@@ -1,33 +1,35 @@
+/*   Selectors that apply appropriate styles for each color.
+     Any hoverable will be highlighted based off their design color.  */
 .primary {
-  background: #3df;
-  color: #006073;
+  background: #18d;
+  color: #ffffff;
 }
 .primary.hover:hover {
-  background: #80eaff;
-  color: #006073;
+  background: #49abf1;
+  color: #ffffff;
 }
 .secondary {
-  background: #80eaff;
-  color: #006073;
+  background: #49abf1;
+  color: #ffffff;
 }
 .secondary.hover:hover {
-  background: #ccf6ff;
-  color: #006073;
+  background: #90ccf7;
+  color: #062e4b;
 }
 .tertiary {
-  background: #00bfe5;
+  background: #0c5c96;
   color: #ffffff;
 }
 .tertiary.hover:hover {
-  background: #33ddff;
-  color: #006073;
+  background: #1188dd;
+  color: #ffffff;
 }
 .quaternary {
-  background: #006073;
+  background: #062e4b;
   color: #ffffff;
 }
 .quaternary.hover:hover {
-  background: #009fbf;
+  background: #0b5a92;
   color: #ffffff;
 }
 /*   Standard style refreshes for page.
@@ -36,6 +38,8 @@
 *:before,
 *:after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 /*   (Handles odd spacing for child elements of the HTML or Body tags)     */
 html,
@@ -62,7 +66,7 @@ nav {
   justify-content: center;
   height: 70px;
   font: 20px Impact, Charcoal, sans-serif;
-  box-shadow: 0 0 50px #006073;
+  box-shadow: 0 0 50px #062e4b;
 }
 nav ul {
   display: flex;
@@ -70,7 +74,6 @@ nav ul {
   align-items: center;
   margin: 0;
   padding: 0;
-  cursor: pointer;
 }
 nav ul li:not(.no-link) {
   display: inherit;
@@ -80,6 +83,7 @@ nav ul li:not(.no-link) {
 }
 nav ul li:not(.no-link) a {
   padding: 10px;
+  cursor: pointer;
 }
 nav ul li:not(.no-link).sub-menu {
   flex-direction: column;
@@ -90,8 +94,9 @@ nav ul li:not(.no-link).sub-menu:hover ul {
   transition: opacity 1s ease-out;
 }
 nav ul li:not(.no-link).sub-menu > a:after {
-  padding: none;
-  margin: none;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
   content: ' ▾';
 }
 nav ul li:not(.no-link).sub-menu ul {
