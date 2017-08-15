@@ -1,8 +1,44 @@
 
-<link rel="stylesheet" type="text/css" href="css/colors.css"/>
-<div class="wrapper">
-  <div class="primary">primary color</div>
-  <div class="secondary">secondary color</div>
-  <div class="tertiary">tertiary color</div>
-  <div class="quaternary">quaternary color</div>
+<head>
+  <style>
+    .page{
+         display:flex;
+         font:20px "Arial";
+    }
+    .wrapper{
+         display:flex;
+         flex-direction:column;
+         justify-content:flex-start;
+         height:500px;
+         width:500px;
+    }
+    .box{
+         display:flex;
+         flex:1 0;
+         flex-wrap:wrap;
+         align-items:center;
+         justify-content:center;
+    }
+  </style>
+</head>
+<link rel="stylesheet" type="text/css" href="css/Spray.css"/>
+<div class="page">    
+  <div class="wrapper">
+    <div class="box pri hover">primary.hover          <br/>short: pri.hover       <br/></div>
+    <div class="box sec hover">secondary.hover        <br/>short: sec.hover       <br/></div>
+    <div class="box ter hover">tertiary.hover         <br/>short: ter.hover       <br/></div>
+    <div class="box qua hover">quaternary.hover       <br/>short: qua.hover       <br/></div>
+  </div>
+  <div class="wrapper">
+    <div class="box c1p hover">c1primary.hover        <br/>short: c1p.hover       <br/></div>
+    <div class="box c1s hover">c1secondary.hover      <br/>short: c1s.hover       <br/></div>
+    <div class="box c1t hover">c1tertiary.hover       <br/>short: c1t.hover       <br/></div>
+    <div class="box c1q hover">c1quaternary.hover     <br/>short: c1q.hover       <br/></div>
+  </div>
+  <div class="wrapper">
+    <div class="box c2p hover">c2primary.hover        <br/>short: c2p.hover       <br/></div>
+    <div class="box c2s hover">c2secondary.hover      <br/>short: c2s.hover       <br/></div>
+    <div class="box c2t hover">c2tertiary.hover       <br/>short: c2t.hover       <br/></div>
+    <div class="box c2q hover">c2quaternary.hover     <br/>short: c2q.hover       <br/></div>
+  </div>
 </div>

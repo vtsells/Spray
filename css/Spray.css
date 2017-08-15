@@ -1,36 +1,124 @@
 /*   Selectors that apply appropriate styles for each color.
      Any hoverable will be highlighted based off their design color.  */
+.pri,
 .primary {
-  background: #902;
-  color: #ffe5eb;
+  background: #995;
+  color: #ffffff;
 }
+.pri.hover:hover,
 .primary.hover:hover {
-  background: #e50033;
-  color: #ffe5eb;
+  background: #b9b981;
+  color: #ffffff;
 }
+.c1p,
+.c1primary {
+  background: #559999;
+  color: #ffffff;
+}
+.c1p.hover:hover,
+.c1primary.hover:hover {
+  background: #81b9b9;
+  color: #ffffff;
+}
+.c2p,
+.c2primary {
+  background: #995599;
+  color: #ffffff;
+}
+.c2p.hover:hover,
+.c2primary.hover:hover {
+  background: #b981b9;
+  color: #ffffff;
+}
+.sec,
 .secondary {
-  background: #e50033;
-  color: #ffe5eb;
+  background: #b9b981;
+  color: #ffffff;
 }
+.sec.hover:hover,
 .secondary.hover:hover {
-  background: #ff3360;
-  color: #ffe5eb;
+  background: #d5d5b3;
+  color: #34341d;
 }
+.c1s,
+.c1secondary {
+  background: #81b9b9;
+  color: #ffffff;
+}
+.c1s.hover:hover,
+.c1secondary.hover:hover {
+  background: #b3d4d5;
+  color: #34341d;
+}
+.c2s,
+.c2secondary {
+  background: #b981b9;
+  color: #ffffff;
+}
+.c2s.hover:hover,
+.c2secondary.hover:hover {
+  background: #d5b3d4;
+  color: #34341d;
+}
+.ter,
 .tertiary {
-  background: #4d0011;
-  color: #ffe5eb;
+  background: #68683a;
+  color: #ffffff;
 }
+.ter.hover:hover,
 .tertiary.hover:hover {
-  background: #990022;
-  color: #ffe5eb;
+  background: #999955;
+  color: #ffffff;
 }
+.c1t,
+.c1tertiary {
+  background: #3a6868;
+  color: #ffffff;
+}
+.c1t.hover:hover,
+.c1tertiary.hover:hover {
+  background: #559999;
+  color: #ffffff;
+}
+.c2t,
+.c2tertiary {
+  background: #683a68;
+  color: #ffffff;
+}
+.c2t.hover:hover,
+.c2tertiary.hover:hover {
+  background: #995599;
+  color: #ffffff;
+}
+.qua,
 .quaternary {
-  background: #260009;
-  color: #ffe5eb;
+  background: #34341d;
+  color: #ffffff;
 }
+.qua.hover:hover,
 .quaternary.hover:hover {
-  background: #73001a;
-  color: #ffe5eb;
+  background: #656538;
+  color: #ffffff;
+}
+.c1q,
+.c1quaternary {
+  background: #1d3434;
+  color: #ffffff;
+}
+.c1q.hover:hover,
+.c1quaternary.hover:hover {
+  background: #386565;
+  color: #ffffff;
+}
+.c2q,
+.c2quaternary {
+  background: #341d34;
+  color: #ffffff;
+}
+.c2q.hover:hover,
+.c2quaternary.hover:hover {
+  background: #653865;
+  color: #ffffff;
 }
 /*   Standard style refreshes for page.
      (Defaults box-sizing for all tags)      */
@@ -66,7 +154,7 @@ nav {
   justify-content: center;
   height: 70px;
   font: 20px Impact, Charcoal, sans-serif;
-  box-shadow: 0 0 50px #260009;
+  box-shadow: 0 0 50px #34341d;
 }
 nav ul {
   display: flex;

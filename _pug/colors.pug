@@ -1,11 +1,62 @@
 //output:../colors.html
-link(rel="stylesheet", type="text/css", href="css/colors.css")
-.wrapper
-     .primary
-          |primary color
-     .secondary
-          |secondary color
-     .tertiary
-          |tertiary color
-     .quaternary
-          |quaternary color
+head
+     style.
+          .page{
+               display:flex;
+               font:20px "Arial";
+          }
+          .wrapper{
+               display:flex;
+               flex-direction:column;
+               justify-content:flex-start;
+               height:500px;
+               width:500px;
+          }
+          .box{
+               display:flex;
+               flex:1 0;
+               flex-wrap:wrap;
+               align-items:center;
+               justify-content:center;
+          }
+link(rel="stylesheet", type="text/css", href="css/Spray.css")
+.page     
+     .wrapper
+          .box.pri.hover
+               | primary.hover          #[br]
+               | short: pri.hover       #[br]
+          .box.sec.hover
+               | secondary.hover        #[br]
+               | short: sec.hover       #[br]
+          .box.ter.hover
+               | tertiary.hover         #[br]
+               | short: ter.hover       #[br]
+          .box.qua.hover
+               | quaternary.hover       #[br]
+               | short: qua.hover       #[br]
+     .wrapper
+          .box.c1p.hover
+               | c1primary.hover        #[br]
+               | short: c1p.hover       #[br]
+          .box.c1s.hover
+               | c1secondary.hover      #[br]
+               | short: c1s.hover       #[br]
+          .box.c1t.hover
+               | c1tertiary.hover       #[br]
+               | short: c1t.hover       #[br]
+          .box.c1q.hover
+               | c1quaternary.hover     #[br]
+               | short: c1q.hover       #[br]
+     .wrapper
+          .box.c2p.hover
+               | c2primary.hover        #[br]
+               | short: c2p.hover       #[br]
+          .box.c2s.hover
+               | c2secondary.hover      #[br]
+               | short: c2s.hover       #[br]
+          .box.c2t.hover
+               | c2tertiary.hover       #[br]
+               | short: c2t.hover       #[br]
+          .box.c2q.hover
+               | c2quaternary.hover     #[br]
+               | short: c2q.hover       #[br]

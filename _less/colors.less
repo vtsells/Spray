@@ -3,47 +3,69 @@
 //   It's recommended that you stick to LESS color functions for changes.
 //   Currently, the pallete consists of shades of the @primary color.
 //   These colors can be modified with LESS color functions to provide
-//   complimentary colors instead.
+//   complimentary colors instead. (@secondary:spin(@primary, 180))
 @secondary:lighten(@primary,15%);
 @tertiary:darken(@primary,15%);
 @quaternary:mix(@tertiary,#000);
+//
+@c1primary:spin(@primary,120);
+@c1secondary:lighten(@c1primary,15%);
+@c1tertiary:darken(@c1primary,15%);
+@c1quaternary:mix(@c1tertiary,#000);
+//
+@c2primary:spin(@primary, 240);
+@c2secondary:lighten(@c2primary,15%);
+@c2tertiary:darken(@c2primary,15%);
+@c2quaternary:mix(@c2tertiary,#000);
 //   Mixin for determining how much contrast is applied to text.
 //   Modify this to increase or decrease text contrast
 .text-color(@color){
      color:contrast(@color,@quaternary,lighten(@secondary,50%),50%);
 }
+//   Helper for mass color shade modifications
+.colorstyle(@color){
+     background: @color;
+     .text-color(@color);
+     &.hover:hover{
+          background:lighten(@color,15%);
+          .text-color(lighten(@color,15%));
+     }
+}
 /*   Selectors that apply appropriate styles for each color.
      Any hoverable will be highlighted based off their design color.  */
-//   Possible future modification: shorten classes to .pri, .sec, .ter, .qua
-.primary{
-     background: @primary;
-     .text-color(@primary);
-     &.hover:hover{
-          background:lighten(@primary,15%);
-          .text-color(lighten(@primary,15%));
-     }
+.pri, .primary{
+     .colorstyle(@primary);
 }
-.secondary{
-     background: @secondary;
-     .text-color(@secondary);
-     &.hover:hover{
-          background:lighten(@secondary,15%);
-          .text-color(lighten(@secondary,15%));
-     }
+.c1p, .c1primary{
+     .colorstyle(@c1primary);
 }
-.tertiary{
-     background: @tertiary;
-     .text-color(@tertiary);
-     &.hover:hover{
-          background:lighten(@tertiary,15%);
-          .text-color(lighten(@tertiary,15%));
-     }
+.c2p, .c2primary{
+     .colorstyle(@c2primary);
 }
-.quaternary{
-     background: @quaternary;
-     .text-color(@quaternary);
-     &.hover:hover{
-          background:lighten(@quaternary,15%);
-          .text-color(lighten(@quaternary,15%));
-     }
+.sec, .secondary{
+     .colorstyle(@secondary);
+}
+.c1s, .c1secondary{
+     .colorstyle(@c1secondary);
+}
+.c2s, .c2secondary{
+     .colorstyle(@c2secondary);
+}
+.ter, .tertiary{
+     .colorstyle(@tertiary);
+}
+.c1t, .c1tertiary{
+     .colorstyle(@c1tertiary);
+}
+.c2t, .c2tertiary{
+     .colorstyle(@c2tertiary);
+}
+.qua, .quaternary{
+     .colorstyle(@quaternary);
+}
+.c1q, .c1quaternary{
+     .colorstyle(@c1quaternary);
+}
+.c2q, .c2quaternary{
+     .colorstyle(@c2quaternary);
 }
