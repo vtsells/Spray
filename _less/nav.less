@@ -1,5 +1,7 @@
 // main: Spray.less
-
+@import "S:\_webs\playground\_less\mixins.less";
+@import "S:\_webs\playground\_less\vars.less";
+@import "S:\_webs\playground\_less\colors.less";
 /*   Standard style refreshes for page.
      (Defaults box-sizing for all tags)      */
 *, *:before, *:after{
@@ -34,15 +36,14 @@ nav {
      .font-nav(20px);
      .box-shadow(@navshadowcolor);
      ul{
-          display: flex;
+          display: inherit;
           list-style: none;
           align-items: center;
           margin: 0;
           padding: 0;
-          li:not(.no-link){
+          /*li:not(.no-link){
                display: inherit;
                overflow: hidden;
-               //.border(none,1);
                margin: 10px;
                a{
                     padding: 10px;
@@ -79,6 +80,15 @@ nav {
                          }
                     }
                }
-          }
+          }*/
+     }
+     a{
+          padding:10px;
+          margin:10px;
+          cursor: pointer;
+     }
+     &.sub-menu{
+          display: inherit;
+          flex-direction: column;
      }
 }
