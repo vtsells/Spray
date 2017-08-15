@@ -49,9 +49,14 @@ nav {
      & li.sub-menu{
           display: inherit;
           flex-direction: column;
+          //align-items: flex-end;
           >a:after{
                padding-left:5px;
                content: '\25BC';
+          }
+          & .sub-menu{
+            display: flex;
+            
           }
           & .sub-menu a{
                padding: 5px;
@@ -62,15 +67,17 @@ nav {
                display: inherit;
                position:absolute;
                flex-direction: column;
+               align-items: stretch;
+
                margin: 0;
-               .hide(1s, ease-out);
+               //.hide(1s, ease-out);
                & li{
                     margin: 5px;
                }
           }
           &:hover{
                & ul{
-                    .show(1s, ease-out);
+                    //.show(1s, ease-out);
                }
           }
      }
