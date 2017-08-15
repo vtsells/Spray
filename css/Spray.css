@@ -2,123 +2,123 @@
      Any hoverable will be highlighted based off their design color.  */
 .pri,
 .primary {
-  background: #bdc;
-  color: #446253;
+  background: #159;
+  color: #f7fbfe;
 }
 .pri.hover:hover,
 .primary.hover:hover {
-  background: #eef7f2;
-  color: #446253;
+  background: #197bde;
+  color: #f7fbfe;
 }
 .c1p,
 .c1primary {
-  background: #ccbbdd;
-  color: #446253;
+  background: #991155;
+  color: #f7fbfe;
 }
 .c1p.hover:hover,
 .c1primary.hover:hover {
-  background: #f2eef7;
-  color: #446253;
+  background: #de197b;
+  color: #f7fbfe;
 }
 .c2p,
 .c2primary {
-  background: #ddccbb;
-  color: #446253;
+  background: #559911;
+  color: #f7fbfe;
 }
 .c2p.hover:hover,
 .c2primary.hover:hover {
-  background: #f7f2ee;
-  color: #446253;
+  background: #7bde19;
+  color: #05172a;
 }
 .sec,
 .secondary {
-  background: #eef7f2;
-  color: #446253;
+  background: #197bde;
+  color: #f7fbfe;
 }
 .sec.hover:hover,
 .secondary.hover:hover {
-  background: #ffffff;
-  color: #446253;
+  background: #57a1ec;
+  color: #f7fbfe;
 }
 .c1s,
 .c1secondary {
-  background: #f2eef7;
-  color: #446253;
+  background: #de197b;
+  color: #f7fbfe;
 }
 .c1s.hover:hover,
 .c1secondary.hover:hover {
-  background: #ffffff;
-  color: #446253;
+  background: #ec57a2;
+  color: #f7fbfe;
 }
 .c2s,
 .c2secondary {
-  background: #f7f2ee;
-  color: #446253;
+  background: #7bde19;
+  color: #05172a;
 }
 .c2s.hover:hover,
 .c2secondary.hover:hover {
-  background: #ffffff;
-  color: #446253;
+  background: #a2ec57;
+  color: #05172a;
 }
 .ter,
 .tertiary {
-  background: #88c4a6;
-  color: #ffffff;
+  background: #092f54;
+  color: #f7fbfe;
 }
 .ter.hover:hover,
 .tertiary.hover:hover {
-  background: #bbddcc;
-  color: #446253;
+  background: #115599;
+  color: #f7fbfe;
 }
 .c1t,
 .c1tertiary {
-  background: #a688c4;
-  color: #ffffff;
+  background: #54092f;
+  color: #f7fbfe;
 }
 .c1t.hover:hover,
 .c1tertiary.hover:hover {
-  background: #ccbbdd;
-  color: #446253;
+  background: #991155;
+  color: #f7fbfe;
 }
 .c2t,
 .c2tertiary {
-  background: #c4a688;
-  color: #ffffff;
+  background: #2f5409;
+  color: #f7fbfe;
 }
 .c2t.hover:hover,
 .c2tertiary.hover:hover {
-  background: #ddccbb;
-  color: #446253;
+  background: #559911;
+  color: #f7fbfe;
 }
 .qua,
 .quaternary {
-  background: #446253;
-  color: #ffffff;
+  background: #05172a;
+  color: #f7fbfe;
 }
 .qua.hover:hover,
 .quaternary.hover:hover {
-  background: #638f79;
-  color: #ffffff;
+  background: #0c3e6f;
+  color: #f7fbfe;
 }
 .c1q,
 .c1quaternary {
-  background: #534462;
-  color: #ffffff;
+  background: #2a0517;
+  color: #f7fbfe;
 }
 .c1q.hover:hover,
 .c1quaternary.hover:hover {
-  background: #79638f;
-  color: #ffffff;
+  background: #6f0c3e;
+  color: #f7fbfe;
 }
 .c2q,
 .c2quaternary {
-  background: #625344;
-  color: #ffffff;
+  background: #172a05;
+  color: #f7fbfe;
 }
 .c2q.hover:hover,
 .c2quaternary.hover:hover {
-  background: #8f7963;
-  color: #ffffff;
+  background: #3e6f0c;
+  color: #f7fbfe;
 }
 /*   Standard style refreshes for page.
      (Defaults box-sizing for all tags)      */
@@ -154,7 +154,7 @@ nav {
   justify-content: center;
   height: 70px;
   font: 20px Impact, Charcoal, sans-serif;
-  box-shadow: 0 0 50px #446253;
+  box-shadow: 0 0 50px #05172a;
 }
 nav ul {
   display: inherit;
@@ -162,55 +162,46 @@ nav ul {
   align-items: center;
   margin: 0;
   padding: 0;
-  /*li:not(.no-link){
-               display: inherit;
-               overflow: hidden;
-               margin: 10px;
-               a{
-                    padding: 10px;
-                    cursor: pointer;
-               }
-               &.sub-menu{
-                    flex-direction: column;
-                    &:hover{
-                         ul{
-                              .show(1s, ease-out);
-                         }
-                    }
-                    >a:after{
-                         padding:0;
-                         margin:0;
-                         //   for some reason, this increases the size of the a element
-                         //   It's slightly larger than the other links.  It's irritating
-                         //   font-size 16px is a hack
-                         font-size: 16px;
-                         content:' ▾';
-                    }
-                    ul {
-                         display: flex;
-                         position: absolute;
-                         flex-direction: column;
-                         .hide(1s, ease-out);
-                         li{
-                              margin: 0;
-                              padding: 0;
-                              a{
-                                   margin: 0;
-                                   padding: 0;
-                              }
-                         }
-                    }
-               }
-          }*/
 }
 nav a {
+  display: inherit;
   padding: 10px;
-  margin: 10px;
   cursor: pointer;
 }
-nav.sub-menu {
+nav li {
+  margin: 0 5px;
+}
+nav li.sub-menu {
   display: inherit;
   flex-direction: column;
+}
+nav li.sub-menu > a:after {
+  padding-left: 5px;
+  content: '\25BC';
+}
+nav li.sub-menu .sub-menu a {
+  padding: 5px;
+  margin: 0;
+  font-size: 18px;
+}
+nav li.sub-menu ul {
+  display: inherit;
+  position: absolute;
+  flex-direction: column;
+  margin: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 1s, opacity 1s ease-out;
+  backface-visibility: hidden;
+}
+nav li.sub-menu ul li {
+  margin: 5px;
+}
+nav li.sub-menu:hover ul {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 1s ease-out;
+  backface-visibility: hidden;
 }
 /*   Positioning wrapper classes  */
 .left {
@@ -229,3 +220,7 @@ nav.sub-menu {
 .rounded {
   border-radius: 10px;
 }
+/********** Known Issues***********
+     MS Edge does not like the nav sub menu transitions
+     Working on a solution
+***********************************/

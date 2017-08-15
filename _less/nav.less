@@ -1,7 +1,4 @@
 // main: Spray.less
-@import "S:\_webs\playground\_less\mixins.less";
-@import "S:\_webs\playground\_less\vars.less";
-@import "S:\_webs\playground\_less\colors.less";
 /*   Standard style refreshes for page.
      (Defaults box-sizing for all tags)      */
 *, *:before, *:after{
@@ -28,67 +25,53 @@ html,body{
      justify-content: space-between;
 }
 /*   Nav tag and children element styling    */
-//   Needs refactoring
 nav {
      display: flex;
      justify-content: center;
      height: @navheight;
      .font-nav(20px);
      .box-shadow(@navshadowcolor);
-     ul{
+     & ul{
           display: inherit;
           list-style: none;
           align-items: center;
           margin: 0;
           padding: 0;
-          /*li:not(.no-link){
-               display: inherit;
-               overflow: hidden;
-               margin: 10px;
-               a{
-                    padding: 10px;
-                    cursor: pointer;
-               }
-               &.sub-menu{
-                    flex-direction: column;
-                    &:hover{
-                         ul{
-                              .show(1s, ease-out);
-                         }
-                    }
-                    >a:after{
-                         padding:0;
-                         margin:0;
-                         //   for some reason, this increases the size of the a element
-                         //   It's slightly larger than the other links.  It's irritating
-                         //   font-size 16px is a hack
-                         font-size: 16px;
-                         content:' ▾';
-                    }
-                    ul {
-                         display: flex;
-                         position: absolute;
-                         flex-direction: column;
-                         .hide(1s, ease-out);
-                         li{
-                              margin: 0;
-                              padding: 0;
-                              a{
-                                   margin: 0;
-                                   padding: 0;
-                              }
-                         }
-                    }
-               }
-          }*/
      }
-     a{
+     & a{
+          display: inherit;
           padding:10px;
-          margin:10px;
           cursor: pointer;
      }
-     &.sub-menu{
+     & li{
+          margin: 0 5px;
+     }
+     & li.sub-menu{
           display: inherit;
           flex-direction: column;
+          >a:after{
+               padding-left:5px;
+               content: '\25BC';
+          }
+          & .sub-menu a{
+               padding: 5px;
+               margin:0;
+               font-size: floor(@navfontsize*.9);
+          }
+          & ul{
+               display: inherit;
+               position:absolute;
+               flex-direction: column;
+               margin: 0;
+               .hide(1s, ease-out);
+               & li{
+                    margin: 5px;
+               }
+          }
+          &:hover{
+               & ul{
+                    .show(1s, ease-out);
+               }
+          }
      }
 }

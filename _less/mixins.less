@@ -22,9 +22,11 @@
      visibility: visible;
      opacity: 1;
      transition: opacity @length @timing;
+     backface-visibility: hidden;
 }
 .hide(@length, @timing){
      visibility: hidden;
      opacity: 0;
      transition: visibility 0s @length,opacity 1s @timing;
+     backface-visibility: hidden;
 }
