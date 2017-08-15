@@ -125,8 +125,7 @@
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -143,39 +142,24 @@ body {
 /*   Wrapper for nav contents.
      (This is how the nav width is consistent with the page main element)  */
 .nav-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-preferred-size: 1170px;
-      flex-basis: 1170px;
+  flex-direction: row;
+  flex-basis: 1170px;
   max-width: 1170px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 /*   Nav tag and children element styling    */
 nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   height: 70px;
   font: 20px Impact, Charcoal, sans-serif;
-  -webkit-box-shadow: 0 0 50px #05172a;
-          box-shadow: 0 0 50px #05172a;
+  box-shadow: 0 0 50px #05172a;
 }
 nav ul {
   display: inherit;
   list-style: none;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin: 0;
   padding: 0;
 }
@@ -189,18 +173,13 @@ nav li {
 }
 nav li.sub-menu {
   display: inherit;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 nav li.sub-menu > a:after {
   padding-left: 5px;
   content: '\25BC';
 }
 nav li.sub-menu .sub-menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 nav li.sub-menu .sub-menu a {
@@ -211,42 +190,35 @@ nav li.sub-menu .sub-menu a {
 nav li.sub-menu ul {
   display: inherit;
   position: absolute;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  flex-direction: column;
+  align-items: stretch;
   margin: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 1s, opacity 1s ease-out;
+  backface-visibility: hidden;
 }
 nav li.sub-menu ul li {
   margin: 5px;
 }
+nav li.sub-menu:hover ul {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 1s ease-out;
+  backface-visibility: hidden;
+}
 /*   Positioning wrapper classes  */
 .left {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: flex-start;
 }
 .right {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
 }
 .center {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 /*  Styling classes */
 .rounded {
