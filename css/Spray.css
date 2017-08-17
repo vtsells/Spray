@@ -2,123 +2,123 @@
      Any hoverable will be highlighted based off their design color.  */
 .pri,
 .primary {
-  background: #159;
-  color: #f7fbfe;
+  background: #44eee2;
+  color: #0a6962;
 }
 .pri.hover:hover,
 .primary.hover:hover {
-  background: #197bde;
-  color: #f7fbfe;
+  background: #8af4ed;
+  color: #0a6962;
 }
 .c1p,
 .c1primary {
-  background: #991155;
-  color: #f7fbfe;
+  background: #e244ee;
+  color: #ffffff;
 }
 .c1p.hover:hover,
 .c1primary.hover:hover {
-  background: #de197b;
-  color: #f7fbfe;
+  background: #ed8af4;
+  color: #ffffff;
 }
 .c2p,
 .c2primary {
-  background: #559911;
-  color: #f7fbfe;
+  background: #eee244;
+  color: #0a6962;
 }
 .c2p.hover:hover,
 .c2primary.hover:hover {
-  background: #7bde19;
-  color: #05172a;
+  background: #f4ed8a;
+  color: #0a6962;
 }
 .sec,
 .secondary {
-  background: #197bde;
-  color: #f7fbfe;
+  background: #8af4ed;
+  color: #0a6962;
 }
 .sec.hover:hover,
 .secondary.hover:hover {
-  background: #57a1ec;
-  color: #f7fbfe;
+  background: #d0fbf8;
+  color: #0a6962;
 }
 .c1s,
 .c1secondary {
-  background: #de197b;
-  color: #f7fbfe;
+  background: #ed8af4;
+  color: #ffffff;
 }
 .c1s.hover:hover,
 .c1secondary.hover:hover {
-  background: #ec57a2;
-  color: #f7fbfe;
+  background: #f8d0fb;
+  color: #0a6962;
 }
 .c2s,
 .c2secondary {
-  background: #7bde19;
-  color: #05172a;
+  background: #f4ed8a;
+  color: #0a6962;
 }
 .c2s.hover:hover,
 .c2secondary.hover:hover {
-  background: #a2ec57;
-  color: #05172a;
+  background: #fbf8d0;
+  color: #0a6962;
 }
 .ter,
 .tertiary {
-  background: #092f54;
-  color: #f7fbfe;
+  background: #13d2c5;
+  color: #0a6962;
 }
 .ter.hover:hover,
 .tertiary.hover:hover {
-  background: #115599;
-  color: #f7fbfe;
+  background: #44eee2;
+  color: #0a6962;
 }
 .c1t,
 .c1tertiary {
-  background: #54092f;
-  color: #f7fbfe;
+  background: #c513d2;
+  color: #ffffff;
 }
 .c1t.hover:hover,
 .c1tertiary.hover:hover {
-  background: #991155;
-  color: #f7fbfe;
+  background: #e244ee;
+  color: #ffffff;
 }
 .c2t,
 .c2tertiary {
-  background: #2f5409;
-  color: #f7fbfe;
+  background: #d2c513;
+  color: #0a6962;
 }
 .c2t.hover:hover,
 .c2tertiary.hover:hover {
-  background: #559911;
-  color: #f7fbfe;
+  background: #eee244;
+  color: #0a6962;
 }
 .qua,
 .quaternary {
-  background: #05172a;
-  color: #f7fbfe;
+  background: #0a6962;
+  color: #ffffff;
 }
 .qua.hover:hover,
 .quaternary.hover:hover {
-  background: #0c3e6f;
-  color: #f7fbfe;
+  background: #10afa4;
+  color: #ffffff;
 }
 .c1q,
 .c1quaternary {
-  background: #2a0517;
-  color: #f7fbfe;
+  background: #620a69;
+  color: #ffffff;
 }
 .c1q.hover:hover,
 .c1quaternary.hover:hover {
-  background: #6f0c3e;
-  color: #f7fbfe;
+  background: #a410af;
+  color: #ffffff;
 }
 .c2q,
 .c2quaternary {
-  background: #172a05;
-  color: #f7fbfe;
+  background: #69620a;
+  color: #ffffff;
 }
 .c2q.hover:hover,
 .c2quaternary.hover:hover {
-  background: #3e6f0c;
-  color: #f7fbfe;
+  background: #afa410;
+  color: #ffffff;
 }
 /*   Standard style refreshes for page.
      (Defaults box-sizing for all tags)      */
@@ -154,7 +154,7 @@ nav {
   justify-content: center;
   height: 70px;
   font: 20px Impact, Charcoal, sans-serif;
-  box-shadow: 0 0 50px #05172a;
+  box-shadow: 0 0 50px #0a6962;
 }
 nav ul {
   display: inherit;
@@ -182,6 +182,14 @@ nav li.sub-menu > a:after {
 nav li.sub-menu .sub-menu {
   display: flex;
 }
+nav li.sub-menu .sub-menu.right {
+  position: relative;
+}
+nav li.sub-menu .sub-menu.right > ul {
+  /*   Fix for IE     */
+  right: 0;
+  white-space: nowrap;
+}
 nav li.sub-menu .sub-menu a {
   padding: 5px;
   margin: 0;
@@ -203,7 +211,7 @@ nav li.sub-menu ul li {
 }
 nav li.sub-menu:hover ul {
   visibility: visible;
-  opacity: 1;
+  opacity: 1.0;
   transition: opacity 1s ease-out;
   backface-visibility: hidden;
 }
