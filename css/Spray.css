@@ -146,7 +146,6 @@ body {
   flex-direction: row;
   flex-basis: 1170px;
   max-width: 1170px;
-  justify-content: space-between;
 }
 /*   Nav tag and children element styling    */
 nav {
@@ -215,17 +214,37 @@ nav li.sub-menu:hover ul {
   /*   Fix for Edge 40     */
   transition-delay: 0.1s;
 }
+.collapse {
+  height: 35px;
+  width: 35px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  justify-content: space-between;
+  order: 10;
+  padding: 4px;
+  border-radius: 8px;
+}
+.collapse .bar {
+  height: 27%;
+  width: 95%;
+  border-radius: 100px;
+}
 /*   Positioning wrapper classes  */
 .left {
   display: flex;
+  flex: 1;
   justify-content: flex-start;
 }
 .right {
   display: flex;
+  flex: 1;
   justify-content: flex-end;
 }
 .center {
   display: flex;
+  flex: 1;
   justify-content: center;
 }
 /*  Styling classes */

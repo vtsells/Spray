@@ -22,7 +22,7 @@ html,body{
      flex-direction: row;
      flex-basis: @pagewidth;
      max-width: @pagewidth;
-     justify-content: space-between;
+
 }
 /*   Nav tag and children element styling    */
 nav {
@@ -89,5 +89,25 @@ nav {
                     .show(1.0s, ease-out);
                }
           }
+     }
+}
+.collapse{
+     
+     height:@navheight*.5;
+     width:@navheight*.5;
+     display: flex;
+     flex-direction: column;
+     align-self: center;
+     align-items: center;
+     justify-content: space-between;
+     order:10;
+     padding:4px;
+     border-radius: 8px;
+     & .bar{
+
+          height:27%;
+          width:95%;
+
+          border-radius: 100px;
      }
 }
