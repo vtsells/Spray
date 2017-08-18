@@ -56,10 +56,11 @@ nav {
           }
           & .sub-menu{
                display: flex;
+               /*   Fix for IE Flex Absolute positioning    */
                &.right{
                     position: relative;
                     &>ul{
-                         /*   Fix for IE     */
+                         /*   Fix for IE Flex Absolute positioning    */
                          right:0;
                          white-space: nowrap;
                     }

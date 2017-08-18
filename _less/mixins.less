@@ -21,12 +21,11 @@
 .show(@length, @timing){
      visibility: visible;
      opacity: 1.0;
-     transition: opacity @length @timing;
-     backface-visibility: hidden;
+     /*   Fix for Edge 40     */
+     transition-delay:0.1s;
 }
 .hide(@length, @timing){
      visibility: hidden;
      opacity: 0;
-     transition: visibility 0s @length,opacity @length @timing;
-     backface-visibility: hidden;
+     transition: visibility @length,opacity @length @timing;
 }

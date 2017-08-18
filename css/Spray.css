@@ -181,12 +181,13 @@ nav li.sub-menu > a:after {
 }
 nav li.sub-menu .sub-menu {
   display: flex;
+  /*   Fix for IE Flex Absolute positioning    */
 }
 nav li.sub-menu .sub-menu.right {
   position: relative;
 }
 nav li.sub-menu .sub-menu.right > ul {
-  /*   Fix for IE     */
+  /*   Fix for IE Flex Absolute positioning    */
   right: 0;
   white-space: nowrap;
 }
@@ -203,8 +204,7 @@ nav li.sub-menu ul {
   margin: 0;
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s 1s, opacity 1s ease-out;
-  backface-visibility: hidden;
+  transition: visibility 1s, opacity 1s ease-out;
 }
 nav li.sub-menu ul li {
   margin: 5px;
@@ -212,8 +212,8 @@ nav li.sub-menu ul li {
 nav li.sub-menu:hover ul {
   visibility: visible;
   opacity: 1.0;
-  transition: opacity 1s ease-out;
-  backface-visibility: hidden;
+  /*   Fix for Edge 40     */
+  transition-delay: 0.1s;
 }
 /*   Positioning wrapper classes  */
 .left {
@@ -232,7 +232,3 @@ nav li.sub-menu:hover ul {
 .rounded {
   border-radius: 10px;
 }
-/********** Known Issues***********
-     MS Edge does not like the nav sub menu transitions
-     Working on a solution
-***********************************/
