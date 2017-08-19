@@ -1,12 +1,26 @@
-// out: ../css/Spray.css, sourcemap: false, compress: false
+// out: ../css/Spray.css, sourcemap: true, compress: false
 //   Ties everything together into one css file
-@import "vars.less";
-@import "mixins.less";
-//   This can be considered modular.  If there is a module below you don't
-//   want to use, just comment out the import statement for it to keep your
-//   css as lean as needed.  You can add your custom .less files here as well.
-@import "colors.less";
-@import "nav.less";
-@import "basis.less";
+//   These are required, don't remove them
+
+@import "/basis/vars-basis.less";       //Holds most root variables
+@import "/basis/mixins-basis.less";     //Holds most mixins used by other basis files
+@import "/basis/styling-basis.less";    //Resets certain default element properties
+
+//   If there is a module below you don't want to use, just comment out the
+//   import statement for it to keep your css as lean as needed.  You can add
+//   your custom .less files and modules here as well.
+
+//   Additional Basis files
+@import "/basis/colors-basis.less";     //Builds the base classes for color theming
+@import "/basis/nav-basis.less";        //Basis for standard navbar creation
+@import "/basis/positions-basis.less";  //Handles Left, Center, and Right positioning
+
+//   Modules
+@import "/modules/styling-mod.less";
+@import "/modules/nav-mod.less";
+
 //   Custom imports go after this line.
 //@import "custom.less";
+
+// Necessary for easier debugging;
+/*# sourceMappingURL=Spray.css.map */

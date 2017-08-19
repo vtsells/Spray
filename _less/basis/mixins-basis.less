@@ -1,0 +1,31 @@
+// main: ../Spray.less
+//   These are all easily accessible mixins for modifying certain
+//   design-centric styles
+
+
+//   affects all box shadows
+.box-shadow(@style, @color){
+     box-shadow: @style @color;
+}
+//   affects all borders, with options for colored, non-visible, or rounded
+.border(@color, @isrounded) when (iscolor(@color)){
+     border: 1px solid @color;
+}
+.border(@color, @isrounded) when (@isrounded=1){
+     border-radius: 10px;
+}
+
+//   affects only the font in the nav element
+.font(@size, @family){
+     font: @size @family;
+}
+//   default show/hide nav sub menu transitions
+.nav-sub-menu-show(){
+     visibility: visible;     //   leave this line alone
+     //opacity: 1.0;
+}
+.nav-sub-menu-hide(){
+     visibility: hidden;      //   Leave this line alone
+     //opacity: 0;
+     //transition: visibility @nav-transition-time,opacity @nav-transition-time @nav-transition-type;
+}

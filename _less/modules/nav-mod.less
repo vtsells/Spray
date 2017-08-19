@@ -1,0 +1,18 @@
+// main: ../Spray.less
+@nav-transition-time:.5s;
+@nav-transition-type:ease-out;
+.nav-sub-menu-show(){
+     opacity: 1.0;
+}
+.nav-sub-menu-hide(){
+     opacity: 0;
+     transition: visibility @nav-transition-time, opacity @nav-transition-time @nav-transition-type;
+}
+nav{
+     position:inherit;
+     .font(@nav-font-size,@nav-font-family);
+     & .sub-menu{
+          .font(@nav-font-size*.8,@nav-font-family);
+     }
+     .box-shadow(0px 0px 50px, @navshadowcolor);
+}
