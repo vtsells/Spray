@@ -1,4 +1,5 @@
 // main: ../Spray.less
+
 /*   Wrapper for nav contents.
      (This is how the nav width is consistent with the page main element)  */
 .nav-wrapper{
@@ -7,6 +8,7 @@
      flex-basis: @page-width;
      max-width: @page-width;
 }
+
 /*   Nav tag and children element styling    */
 nav {
      position:fixed;
@@ -14,6 +16,7 @@ nav {
      justify-content: center;
      height: @nav-height;
      width:100%;
+     //
      & ul{
           display: inherit;
           list-style: none;
@@ -21,22 +24,26 @@ nav {
           margin: 0;
           padding: 0;
      }
+     //
      & a{
           display: inherit;
           padding:10px;
           cursor: pointer;
      }
+     //
      & li{
           margin: 0 5px;
      }
+     //
      & .sub-menu-head{
           display: inherit;
           flex-direction: column;
-
+          //
           >a:after{
                padding-left:5px;
                content: '\25BC';
           }
+          //
           & ul{
                display: inherit;
                position:absolute;
@@ -45,11 +52,14 @@ nav {
                margin: 0;
                overflow: hidden;
                .nav-sub-menu-hide();
+               //
                & li{
                     margin: 2px;
                }
           }
+          //
           &:hover{
+               //
                & ul{
                     /*   Fix for Edge 40     */
                     transition-delay:0.01s;
@@ -57,11 +67,14 @@ nav {
                }
           }
      }
+     //
      & .sub-menu{
           display: flex;
+          //
           &.right{
                /*   Fix for IE Flex Absolute positioning    */
                position: relative;
+               //
                &>ul{
                     /*   Fix for IE Flex Absolute positioning    */
                     right:0;
@@ -69,13 +82,14 @@ nav {
                }
           }
      }
+     //
      & .sub-menu a{
           padding: 5px;
           margin:0;
      }
 }
-.collapse{
 
+.collapse{
      height:@nav-height*1.5;
      width:@nav-height*1.5;
      display: flex;
@@ -86,8 +100,8 @@ nav {
      order:10;
      padding:4px;
      border-radius: 8px;
+     //
      & .bar{
-
           height:15%;
           width:95%;
           margin:5px;

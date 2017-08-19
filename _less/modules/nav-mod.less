@@ -1,19 +1,26 @@
 // main: ../Spray.less
+
+//   Modify the default nav transition settings
 @nav-transition-time:.5s;
 @nav-transition-type:ease-out;
+
 //   These mixins are called from within nav-basis.less
 .nav-sub-menu-show(){
      opacity: 1.0;
 }
+//
 .nav-sub-menu-hide(){
      opacity: 0;
      transition: visibility @nav-transition-time, opacity @nav-transition-time @nav-transition-type;
 }
+
+//   Adds additional styling to the nav bar and sub menus
 nav{
      position:inherit;
      .font(@nav-font-size,@nav-font-family);
+     //
      & .sub-menu{
           .font(@nav-font-size*.8,@nav-font-family);
      }
-     .box-shadow(0px 0px 50px, @navshadowcolor);
+     .box-shadow(0px 0px 50px, @tertiary);
 }

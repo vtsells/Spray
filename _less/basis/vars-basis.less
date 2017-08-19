@@ -1,9 +1,29 @@
 // main: ../Spray.less
+
 //   Primary Starting color for theme
 //   Your Primary color should NOT be the lightest color in your document.
 //   Super light primary colors leave no head room for hover effects or
-//   the associated, lighter secondary colors.
+//   the associated, lighter secondary colors.  For the color shades, it
+//   is recommended that you stick to LESS color functions.
 @primary:#44eee2;
+//   Shades of the primary color
+@secondary:lighten(@primary,15%);
+@tertiary:darken(@primary,15%);
+@quaternary:mix(@tertiary,#000);
+
+//   Starting point for the First complementary color
+@c1primary:spin(@primary,120);
+//   Shades of the first complementary color
+@c1secondary:lighten(@c1primary,15%);
+@c1tertiary:darken(@c1primary,15%);
+@c1quaternary:mix(@c1tertiary,#000);
+
+//   Starting point for the second complementary color
+@c2primary:spin(@primary, 240);
+//   Shades of the second complementary color
+@c2secondary:lighten(@c2primary,15%);
+@c2tertiary:darken(@c2primary,15%);
+@c2quaternary:mix(@c2tertiary,#000);
 
 //   desired width of...Jupiter
 @page-width:1170px;
@@ -19,7 +39,3 @@
 @bordersmall:2px;
 @border:5px;
 @borderlarge:10px;
-
-//   Shadow below Navbar (@primary,@secondary,@tertiary,@quaternary,
-//   and more if you're brave enough to add them in the colors.less file)
-@navshadowcolor:@quaternary;
