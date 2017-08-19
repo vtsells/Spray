@@ -22,13 +22,16 @@
 .text-color(@color){
      color:contrast(@color,@quaternary,lighten(@secondary,50%),50%);
 }
-//   Helper for consistent color shade modifications
+//   Helper for consistent color modifications
 .colorstyle(@color){
      background: @color;
      .text-color(@color);
      &.hover:hover{
           background:lighten(@color,15%);
           .text-color(lighten(@color,15%));
+     }
+     &.bordered{
+          border:5px solid darken(@color,15%);
      }
 }
 /*   Selectors that apply appropriate styles for each color.

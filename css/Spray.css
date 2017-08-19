@@ -10,6 +10,10 @@
   background: #8af4ed;
   color: #0a6962;
 }
+.pri.bordered,
+.primary.bordered {
+  border: 5px solid #13d2c5;
+}
 .c1p,
 .c1primary {
   background: #e244ee;
@@ -19,6 +23,10 @@
 .c1primary.hover:hover {
   background: #ed8af4;
   color: #ffffff;
+}
+.c1p.bordered,
+.c1primary.bordered {
+  border: 5px solid #c513d2;
 }
 .c2p,
 .c2primary {
@@ -30,6 +38,10 @@
   background: #f4ed8a;
   color: #0a6962;
 }
+.c2p.bordered,
+.c2primary.bordered {
+  border: 5px solid #d2c513;
+}
 .sec,
 .secondary {
   background: #8af4ed;
@@ -39,6 +51,10 @@
 .secondary.hover:hover {
   background: #d0fbf8;
   color: #0a6962;
+}
+.sec.bordered,
+.secondary.bordered {
+  border: 5px solid #44eee2;
 }
 .c1s,
 .c1secondary {
@@ -50,6 +66,10 @@
   background: #f8d0fb;
   color: #0a6962;
 }
+.c1s.bordered,
+.c1secondary.bordered {
+  border: 5px solid #e244ee;
+}
 .c2s,
 .c2secondary {
   background: #f4ed8a;
@@ -59,6 +79,10 @@
 .c2secondary.hover:hover {
   background: #fbf8d0;
   color: #0a6962;
+}
+.c2s.bordered,
+.c2secondary.bordered {
+  border: 5px solid #eee244;
 }
 .ter,
 .tertiary {
@@ -70,6 +94,10 @@
   background: #44eee2;
   color: #0a6962;
 }
+.ter.bordered,
+.tertiary.bordered {
+  border: 5px solid #0d8c83;
+}
 .c1t,
 .c1tertiary {
   background: #c513d2;
@@ -79,6 +107,10 @@
 .c1tertiary.hover:hover {
   background: #e244ee;
   color: #ffffff;
+}
+.c1t.bordered,
+.c1tertiary.bordered {
+  border: 5px solid #830d8c;
 }
 .c2t,
 .c2tertiary {
@@ -90,6 +122,10 @@
   background: #eee244;
   color: #0a6962;
 }
+.c2t.bordered,
+.c2tertiary.bordered {
+  border: 5px solid #8c830d;
+}
 .qua,
 .quaternary {
   background: #0a6962;
@@ -99,6 +135,10 @@
 .quaternary.hover:hover {
   background: #10afa4;
   color: #ffffff;
+}
+.qua.bordered,
+.quaternary.bordered {
+  border: 5px solid #032321;
 }
 .c1q,
 .c1quaternary {
@@ -110,6 +150,10 @@
   background: #a410af;
   color: #ffffff;
 }
+.c1q.bordered,
+.c1quaternary.bordered {
+  border: 5px solid #210323;
+}
 .c2q,
 .c2quaternary {
   background: #69620a;
@@ -119,6 +163,10 @@
 .c2quaternary.hover:hover {
   background: #afa410;
   color: #ffffff;
+}
+.c2q.bordered,
+.c2quaternary.bordered {
+  border: 5px solid #232103;
 }
 /*   Standard style refreshes for page.
      (Defaults box-sizing for all tags)      */
@@ -215,20 +263,21 @@ nav li.sub-menu:hover ul {
   transition-delay: 0.1s;
 }
 .collapse {
-  height: 35px;
-  width: 35px;
+  height: 105px;
+  width: 105px;
   display: flex;
   flex-direction: column;
   align-self: center;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   order: 10;
   padding: 4px;
   border-radius: 8px;
 }
 .collapse .bar {
-  height: 27%;
+  height: 15%;
   width: 95%;
+  margin: 5px;
   border-radius: 100px;
 }
 /*   Positioning wrapper classes  */
