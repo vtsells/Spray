@@ -7,11 +7,13 @@
 //   These mixins are called from within nav-basis.less
 .nav-sub-menu-show(){
      opacity: 1.0;
+     //max-height: 500px;
 }
 //
 .nav-sub-menu-hide(){
      opacity: 0;
-     transition: visibility @nav-transition-time, opacity @nav-transition-time @nav-transition-type;
+     //max-height:0;
+     transition:max-height @nav-transition-time, visibility @nav-transition-time, opacity @nav-transition-time @nav-transition-type;
 }
 
 //   Adds additional styling to the nav bar and sub menus

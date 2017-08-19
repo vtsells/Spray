@@ -1,0 +1,107 @@
+// main: ../Spray.less
+
+/*   The collapse div that functions as the menu button     */
+.collapse-btn{
+     height:@nav-height*.8;
+     width:@nav-height*.8;
+     display: flex;
+     flex-direction: column;
+     //align-self: center;
+     align-items: center;
+     justify-content: center;
+     order:10;
+     padding:4px;
+     border-radius: 8px;
+     //
+     & .bar{
+          flex:1;
+          width:95%;
+          margin:3px;
+          border-radius: 100px;
+     }
+}
+@media (min-width: @nav-collapse){
+     .collapse-btn{
+          display: none;
+     }
+}
+@media (max-width: @nav-collapse){
+     .nav-wrapper{
+          position: relative;
+          flex-direction: column;
+          flex:1;
+          flex-basis: auto;
+          justify-content: stretch;
+     }
+     nav {
+          justify-content:space-between;
+          align-items: flex-start;
+          height: auto;
+          width:100%;
+          transition: height 1.0s;
+          //
+          & ul{
+               flex-direction: column;
+               align-items:flex-start;
+          }
+          //
+          & a{
+               display: inherit;
+               align-self: stretch;
+          }
+          //
+          & li{
+               align-self: stretch;
+          }
+          //
+          & .sub-menu-head{
+               flex-direction: column;
+               align-items: stretch;
+               justify-content: stretch;
+
+               //
+               & ul{
+                    display: none;
+                    //height:0;
+                    position:relative;
+                    flex:1;
+                    margin-left: 2%;
+                    background: none;
+                    border-radius: 0;
+                    //
+                    & li{
+                         margin: 2px;
+                    }
+               }
+               &:hover{
+                    //
+                    & ul{
+                         /*   Fix for Edge 40     */
+                         display:flex;
+                         //height:auto;
+                    }
+               }
+          }
+          //
+          & .sub-menu{
+               display: flex;
+               justify-content: stretch;
+               align-items: stretch;
+               /*   Ignore right-aligned submenus    */
+               &.right{
+                    /*   Ignore right-aligned submenus    */
+                    position: relative;
+                    //
+                    &>ul{
+                         right:auto;
+                         white-space: nowrap;
+                    }
+               }
+          }
+          //
+          & .sub-menu a{
+               padding: 5px;
+               margin:0;
+          }
+     }
+}
