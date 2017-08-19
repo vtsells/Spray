@@ -1,0 +1,11 @@
+Things to do:
+- [x]     Simplify nav syntax and follow semantic Html5
+- [x]     Color theming
+- [x]     Modularize nav-basis.less
+- [ ]     Modularize colors-basis.less
+- [ ]     Responsive Nav bar
+- [ ]     Workup themed Articles, Sections, Headers, Footers, etc. and follow semantic Html5
+- [ ]     Create starter modules
+- [ ]     Documentation
+- [ ]     If I feel like it, write powershell script to parse .less files for self-documentation
+- [ ]     Create website for project
