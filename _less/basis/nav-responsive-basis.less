@@ -6,12 +6,13 @@
      width:@nav-height*.8;
      display: flex;
      flex-direction: column;
-     //align-self: center;
      align-items: center;
+     align-self: flex-end;
      justify-content: center;
-     order:10;
      padding:4px;
+     position:absolute;
      border-radius: 8px;
+     z-index: 100;
      //
      & .bar{
           flex:1;
@@ -19,34 +20,48 @@
           margin:3px;
           border-radius: 100px;
      }
+     &:hover ~ .nav-wrapper > ul{
+          .nav-sub-menu-show();
+     }
 }
 @media (min-width: @nav-collapse){
+     //
      .collapse-btn{
           display: none;
      }
 }
 @media (max-width: @nav-collapse){
+     //
      .nav-wrapper{
-          position: relative;
+          position: absolute;
           flex-direction: column;
-          flex:1;
-          flex-basis: auto;
-          justify-content: stretch;
-     }
-     nav {
-          justify-content:space-between;
-          align-items: flex-start;
-          height: auto;
+          flex:0;
           width:100%;
-          transition: height 1.0s;
+          //padding-bottom:5px;
+          overflow: hidden;
+          & >ul{
+               display:block;
+               .nav-sub-menu-hide();
+          }
+          //height:@nav-height;
+     }
+     //
+     nav {
+          .page-title{
+               height:@nav-height*.8;
+          }
+          //justify-content:space-between;
+          justify-content: flex-end;
+          //align-items: flex-start;
+          //height:auto;
           //
           & ul{
                flex-direction: column;
                align-items:flex-start;
+
           }
           //
           & a{
-               display: inherit;
                align-self: stretch;
           }
           //
@@ -55,30 +70,24 @@
           }
           //
           & .sub-menu-head{
-               flex-direction: column;
                align-items: stretch;
                justify-content: stretch;
-
+               flex:0;
                //
                & ul{
-                    display: none;
-                    //height:0;
                     position:relative;
+                    max-height:0;
                     flex:1;
                     margin-left: 2%;
                     background: none;
                     border-radius: 0;
-                    //
-                    & li{
-                         margin: 2px;
-                    }
                }
+               //
                &:hover{
                     //
                     & ul{
                          /*   Fix for Edge 40     */
-                         display:flex;
-                         //height:auto;
+                         max-height:500px;
                     }
                }
           }
@@ -94,7 +103,7 @@
                     //
                     &>ul{
                          right:auto;
-                         white-space: nowrap;
+                         white-space:normal;
                     }
                }
           }

@@ -201,6 +201,11 @@ nav {
   height: 70px;
   width: 100%;
 }
+nav .page-title {
+  display: flex;
+  height: 70px;
+  align-items: center;
+}
 nav ul {
   display: inherit;
   list-style: none;
@@ -232,8 +237,8 @@ nav .sub-menu-head ul {
   margin: 0;
   overflow: hidden;
   visibility: hidden;
-  opacity: 0;
-  transition: max-height 0.5s, visibility 0.5s, opacity 0.5s ease-out;
+  max-height: 0;
+  transition: visibility 2.5s, max-height 2.5s, opacity 2.5s ease-out;
 }
 nav .sub-menu-head ul li {
   margin: 2px;
@@ -242,7 +247,7 @@ nav .sub-menu-head:hover ul {
   /*   Fix for Edge 40     */
   transition-delay: 0.01s;
   visibility: visible;
-  opacity: 1.0;
+  max-height: 500px;
 }
 nav .sub-menu {
   display: flex;
@@ -267,16 +272,22 @@ nav .sub-menu a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-self: flex-end;
   justify-content: center;
-  order: 10;
   padding: 4px;
+  position: absolute;
   border-radius: 8px;
+  z-index: 100;
 }
 .collapse-btn .bar {
   flex: 1;
   width: 95%;
   margin: 3px;
   border-radius: 100px;
+}
+.collapse-btn:hover ~ .nav-wrapper > ul {
+  visibility: visible;
+  max-height: 500px;
 }
 @media (min-width: 978px) {
   .collapse-btn {
@@ -285,49 +296,50 @@ nav .sub-menu a {
 }
 @media (max-width: 978px) {
   .nav-wrapper {
-    position: relative;
+    position: absolute;
     flex-direction: column;
-    flex: 1;
-    flex-basis: auto;
-    justify-content: stretch;
+    flex: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+  .nav-wrapper > ul {
+    display: block;
+    visibility: hidden;
+    max-height: 0;
+    transition: visibility 2.5s, max-height 2.5s, opacity 2.5s ease-out;
   }
   nav {
-    justify-content: space-between;
-    align-items: flex-start;
-    height: auto;
-    width: 100%;
-    transition: height 1.0s;
+    justify-content: flex-end;
+  }
+  nav .page-title {
+    height: 56px;
   }
   nav ul {
     flex-direction: column;
     align-items: flex-start;
   }
   nav a {
-    display: inherit;
     align-self: stretch;
   }
   nav li {
     align-self: stretch;
   }
   nav .sub-menu-head {
-    flex-direction: column;
     align-items: stretch;
     justify-content: stretch;
+    flex: 0;
   }
   nav .sub-menu-head ul {
-    display: none;
     position: relative;
+    max-height: 0;
     flex: 1;
     margin-left: 2%;
     background: none;
     border-radius: 0;
   }
-  nav .sub-menu-head ul li {
-    margin: 2px;
-  }
   nav .sub-menu-head:hover ul {
     /*   Fix for Edge 40     */
-    display: flex;
+    max-height: 500px;
   }
   nav .sub-menu {
     display: flex;
@@ -341,7 +353,7 @@ nav .sub-menu a {
   }
   nav .sub-menu.right > ul {
     right: auto;
-    white-space: nowrap;
+    white-space: normal;
   }
   nav .sub-menu a {
     padding: 5px;
