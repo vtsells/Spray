@@ -22,13 +22,15 @@
 //   default show/hide nav sub menu transitions
 .nav-sub-menu-show(){
      visibility: visible;     //   leave this line alone
+     max-height: 500px;       //   Leave this line alone or else the menus won't show up
      //opacity: 1.0;
 }
 //
 .nav-sub-menu-hide(){
      visibility: hidden;      //   Leave this line alone
+     max-height: 0;           //   Leave this line alone or else the menus won't disappear correctly
      //opacity: 0;
-     //transition: visibility @nav-transition-time,opacity @nav-transition-time @nav-transition-type;
+     transition: visibility 1s .1s, max-height 1s .1s linear;
 }
 
 //   Mixin for determining how much contrast is applied to text.

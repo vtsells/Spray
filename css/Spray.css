@@ -193,6 +193,13 @@ body {
   flex-basis: 1170px;
   max-width: 1170px;
 }
+/*   Page title and Collapse button holder   */
+.nav-head {
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 /*   Nav tag and children element styling    */
 nav {
   position: fixed;
@@ -238,16 +245,20 @@ nav .sub-menu-head ul {
   overflow: hidden;
   visibility: hidden;
   max-height: 0;
-  transition: visibility 2.5s, max-height 2.5s, opacity 2.5s ease-out;
+  transition: visibility 1s 0.1s, max-height 1s 0.1s linear;
+  opacity: 0;
+  transition: visibility 1s, max-height 1s ease-in, opacity 1s ease-in;
 }
 nav .sub-menu-head ul li {
   margin: 2px;
 }
 nav .sub-menu-head:hover ul {
-  /*   Fix for Edge 40     */
+  /*   Fix for Edge 40 transition issues     */
   transition-delay: 0.01s;
   visibility: visible;
   max-height: 500px;
+  opacity: 1.0;
+  transition: visibility 1s, max-height 1s ease-out, opacity 1s ease-out;
 }
 nav .sub-menu {
   display: flex;
@@ -272,10 +283,9 @@ nav .sub-menu a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  align-self: flex-end;
   justify-content: center;
   padding: 4px;
-  position: absolute;
+  order: 2;
   border-radius: 8px;
   z-index: 100;
 }
@@ -285,10 +295,6 @@ nav .sub-menu a {
   margin: 3px;
   border-radius: 100px;
 }
-.collapse-btn:hover ~ .nav-wrapper > ul {
-  visibility: visible;
-  max-height: 500px;
-}
 @media (min-width: 978px) {
   .collapse-btn {
     display: none;
@@ -296,38 +302,42 @@ nav .sub-menu a {
 }
 @media (max-width: 978px) {
   .nav-wrapper {
-    position: absolute;
     flex-direction: column;
-    flex: 0;
+    flex: 1 0;
     width: 100%;
     overflow: hidden;
   }
   .nav-wrapper > ul {
     display: block;
-    visibility: hidden;
-    max-height: 0;
-    transition: visibility 2.5s, max-height 2.5s, opacity 2.5s ease-out;
   }
   nav {
-    justify-content: flex-end;
-  }
-  nav .page-title {
-    height: 56px;
+    flex-direction: column;
+    overflow: hidden;
+    height: auto;
   }
   nav ul {
     flex-direction: column;
     align-items: flex-start;
   }
-  nav a {
-    align-self: stretch;
+  nav .nav-wrapper {
+    visibility: hidden;
+    max-height: 0;
+    transition: visibility 1s 0.1s, max-height 1s 0.1s linear;
+    opacity: 0;
+    transition: visibility 1s, max-height 1s ease-in, opacity 1s ease-in;
+  }
+  nav:hover .nav-wrapper {
+    visibility: visible;
+    max-height: 500px;
+    opacity: 1.0;
+    transition: visibility 1s, max-height 1s ease-out, opacity 1s ease-out;
   }
   nav li {
-    align-self: stretch;
+    margin: 0;
   }
-  nav .sub-menu-head {
-    align-items: stretch;
-    justify-content: stretch;
-    flex: 0;
+  nav li,
+  nav a {
+    align-self: stretch;
   }
   nav .sub-menu-head ul {
     position: relative;
@@ -337,16 +347,6 @@ nav .sub-menu a {
     background: none;
     border-radius: 0;
   }
-  nav .sub-menu-head:hover ul {
-    /*   Fix for Edge 40     */
-    max-height: 500px;
-  }
-  nav .sub-menu {
-    display: flex;
-    justify-content: stretch;
-    align-items: stretch;
-    /*   Ignore right-aligned submenus    */
-  }
   nav .sub-menu.right {
     /*   Ignore right-aligned submenus    */
     position: relative;
@@ -354,10 +354,6 @@ nav .sub-menu a {
   nav .sub-menu.right > ul {
     right: auto;
     white-space: normal;
-  }
-  nav .sub-menu a {
-    padding: 5px;
-    margin: 0;
   }
 }
 /*   Positioning wrapper classes  */

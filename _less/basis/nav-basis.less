@@ -8,7 +8,13 @@
      flex-basis: @page-width;
      max-width: @page-width;
 }
-
+/*   Page title and Collapse button holder   */
+.nav-head{
+     height: inherit;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
 /*   Nav tag and children element styling    */
 nav {
      position:fixed;
@@ -66,7 +72,7 @@ nav {
           &:hover{
                //
                & ul{
-                    /*   Fix for Edge 40     */
+                    /*   Fix for Edge 40 transition issues     */
                     transition-delay:0.01s;
                     .nav-sub-menu-show();
                }
