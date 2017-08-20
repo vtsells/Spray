@@ -247,7 +247,7 @@ nav .sub-menu-head ul {
   max-height: 0;
   transition: visibility 1s, max-height 1s linear;
   opacity: 0;
-  transition: visibility 1s, max-height 1s ease-in, opacity 1s ease-in;
+  transition: visibility 1s, max-height 1s ease-out, opacity 1s ease-out;
 }
 nav .sub-menu-head ul li {
   margin: 2px;
@@ -258,7 +258,6 @@ nav .sub-menu-head:hover ul {
   visibility: visible;
   max-height: 500px;
   opacity: 1.0;
-  transition: visibility 1s, max-height 1s ease-out, opacity 1s ease-out;
 }
 nav .sub-menu {
   display: flex;
@@ -305,6 +304,11 @@ nav .sub-menu a {
     flex-direction: column;
     flex: 1 0;
     overflow: hidden;
+    visibility: hidden;
+    max-height: 0;
+    transition: visibility 1s, max-height 1s linear;
+    opacity: 0;
+    transition: visibility 1s, max-height 1s ease-out, opacity 1s ease-out;
   }
   .nav-wrapper > ul {
     display: block;
@@ -318,18 +322,10 @@ nav .sub-menu a {
     flex-direction: column;
     align-items: flex-start;
   }
-  nav .nav-wrapper {
-    visibility: hidden;
-    max-height: 0;
-    transition: visibility 1s, max-height 1s linear;
-    opacity: 0;
-    transition: visibility 1s, max-height 1s ease-in, opacity 1s ease-in;
-  }
   nav:hover .nav-wrapper {
     visibility: visible;
     max-height: 500px;
     opacity: 1.0;
-    transition: visibility 1s, max-height 1s ease-out, opacity 1s ease-out;
   }
   nav li {
     margin: 0;
