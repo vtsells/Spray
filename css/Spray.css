@@ -245,7 +245,7 @@ nav .sub-menu-head ul {
   overflow: hidden;
   visibility: hidden;
   max-height: 0;
-  transition: visibility 1s 0.1s, max-height 1s 0.1s linear;
+  transition: visibility 1s, max-height 1s linear;
   opacity: 0;
   transition: visibility 1s, max-height 1s ease-in, opacity 1s ease-in;
 }
@@ -254,7 +254,7 @@ nav .sub-menu-head ul li {
 }
 nav .sub-menu-head:hover ul {
   /*   Fix for Edge 40 transition issues     */
-  transition-delay: 0.01s;
+  transition-delay: 0.1s;
   visibility: visible;
   max-height: 500px;
   opacity: 1.0;
@@ -304,7 +304,6 @@ nav .sub-menu a {
   .nav-wrapper {
     flex-direction: column;
     flex: 1 0;
-    width: 100%;
     overflow: hidden;
   }
   .nav-wrapper > ul {
@@ -322,7 +321,7 @@ nav .sub-menu a {
   nav .nav-wrapper {
     visibility: hidden;
     max-height: 0;
-    transition: visibility 1s 0.1s, max-height 1s 0.1s linear;
+    transition: visibility 1s, max-height 1s linear;
     opacity: 0;
     transition: visibility 1s, max-height 1s ease-in, opacity 1s ease-in;
   }

@@ -32,7 +32,7 @@
      .nav-wrapper{
           flex-direction: column;
           flex:1 0;
-          width:100%;
+          //width:100%;
           overflow: hidden;
           //height:@nav-height;
           & >ul{
@@ -64,17 +64,13 @@
                align-self: stretch;
           }
           //
-          & .sub-menu-head{
-               //flex:0;
-               //
-               & ul{
-                    position:relative;
-                    max-height:0;
-                    flex:1;
-                    margin-left: 2%;
-                    background: none;
-                    border-radius: 0;
-               }
+          & .sub-menu-head ul{
+               position:relative;
+               max-height:0;
+               flex:1;
+               margin-left: 2%;
+               background: none;
+               border-radius: 0;
           }
           //
           & .sub-menu.right{
