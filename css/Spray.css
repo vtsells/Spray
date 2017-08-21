@@ -304,6 +304,7 @@ nav .sub-menu a {
     flex-direction: column;
     flex: 1 0;
     overflow: hidden;
+    max-height: 500px;
     visibility: hidden;
     max-height: 0;
     transition: visibility 1s, max-height 1s linear;
@@ -317,6 +318,7 @@ nav .sub-menu a {
     flex-direction: column;
     overflow: hidden;
     height: auto;
+    justify-content: flex-start;
   }
   nav ul {
     flex-direction: column;
