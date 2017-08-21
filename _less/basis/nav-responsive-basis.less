@@ -1,10 +1,17 @@
 // main: ../Spray.less
 
 /*   The collapse div that functions as the menu button     */
+
+/*   Page title and Collapse button holder   */
+.nav-head{
+     display: none;
+     justify-content: space-between;
+     align-items: center;
+}
 .collapse-btn{
      height:@nav-height*.8;
      width:@nav-height*.8;
-     display: none;
+     display: flex;
      flex-direction: column;
      align-items: center;
      justify-content: center;
@@ -19,9 +26,15 @@
           border-radius: 100px;
      }
 }
+//
+.page-title{
+     display: flex;
+     height: @nav-height;
+     align-items: center;
+}
 @media (max-width: @nav-collapse){
      //
-     .collapse-btn{
+     .nav-head{
           display:flex;
      }
      .nav-wrapper{

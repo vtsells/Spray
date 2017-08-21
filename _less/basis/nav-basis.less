@@ -1,11 +1,5 @@
 // main: ../Spray.less
 
-/*   Page title and Collapse button holder   */
-.nav-head{
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-}
 /*   Wrapper for nav contents.
      (This is how the nav width is consistent with the page main element)  */
 .nav-wrapper{
@@ -16,7 +10,6 @@
 }
 /*   Nav tag and children element styling    */
 nav {
-     position:fixed;
      display: flex;
      justify-content: center;
      height: @nav-height;
@@ -33,22 +26,19 @@ nav {
           padding:10px;
           cursor: pointer;
      }
+     //
      & li{
           margin:0 5px;
      }
 }
-.sub-menu{
-     display: flex;
+.sub-menu.right{
+     /*   Fix for IE Flex Absolute positioning    */
+     position: relative;
      //
-     &.right{
+     &>ul{
           /*   Fix for IE Flex Absolute positioning    */
-          position: relative;
-          //
-          &>ul{
-               /*   Fix for IE Flex Absolute positioning    */
-               right:0;
-               white-space: nowrap;
-          }
+          right:0;
+          white-space: nowrap;
      }
 }
 //
@@ -59,11 +49,8 @@ nav {
      }
      //
      & ul{
-          display: inherit;
+          display: block;
           position:absolute;
-          flex-direction: column;
-          align-items: stretch;
-          margin: 0;
           overflow: hidden;
           .nav-sub-menu-hide();
      }
@@ -71,21 +58,11 @@ nav {
           margin: 2px;
      }
      //
-     &:hover{
-          //
-          & ul{
-               .nav-sub-menu-show();
-          }
+     &:hover ul{
+          .nav-sub-menu-show();
      }
 }
 //
 .sub-menu a{
      padding: 5px;
-     margin:0;
-}
-//
-.page-title{
-     display: flex;
-     height: @nav-height;
-     align-items: center;
 }
