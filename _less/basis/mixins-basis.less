@@ -23,16 +23,13 @@
 .nav-sub-menu-show(){
      visibility: visible;     //   leave this line alone
      max-height: 500px;       //   Leave this line alone or else the menus won't show up
+     /*   Fix for Edge 40 opacity transition flickering     */
      transition-delay:0.01s;
-     //opacity: 1.0;
 }
 //
 .nav-sub-menu-hide(){
      visibility: hidden;      //   Leave this line alone
      max-height: 0;           //   Leave this line alone or else the menus won't disappear correctly
-     //opacity: 0;
-     transition-delay: 0.01s;
-     transition: visibility 1s, max-height 1s linear;
 }
 
 //   Mixin for determining how much contrast is applied to text.

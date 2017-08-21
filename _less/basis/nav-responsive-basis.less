@@ -4,14 +4,13 @@
 .collapse-btn{
      height:@nav-height*.8;
      width:@nav-height*.8;
-     display: flex;
+     display: none;
      flex-direction: column;
      align-items: center;
      justify-content: center;
      padding:4px;
      order:2;
      border-radius: 8px;
-     z-index: 100;
      //
      & .bar{
           flex:1;
@@ -19,24 +18,15 @@
           margin:3px;
           border-radius: 100px;
      }
-
-}
-@media (min-width: @nav-collapse){
-     //
-     .collapse-btn{
-          display: none;
-     }
 }
 @media (max-width: @nav-collapse){
      //
+     .collapse-btn{
+          display:flex;
+     }
      .nav-wrapper{
           display:block;
-          flex-direction: column;
-          flex:1 0;
-          //width:100%;
           overflow: hidden;
-          max-height:500px;
-          //height:@nav-height;
           & >ul{
                display:block;
           }
@@ -45,43 +35,21 @@
      //
      nav {
           display:block;
-          flex-direction: column;
           overflow: hidden;
           height:auto;
-          justify-content: flex-start;
-          //
-          & ul{
-               flex-direction: column;
-               align-items:flex-start;
-          }
           &:hover .nav-wrapper{
                .nav-sub-menu-show();
           }
-          //
           & li{
-               margin:0;
+               margin: 0;
           }
-          & li, a{
-               align-self: stretch;
-          }
-          //
-          & .sub-menu-head ul{
-               position:relative;
-               max-height:0;
-               flex:1;
-               margin-left: 2%;
-               background: none;
-               border-radius: 0;
-          }
-          //
-          & .sub-menu.right{
-               /*   Ignore right-aligned submenus    */
-               position: relative;
-               //
-               &>ul{
-                    right:auto;
-                    white-space:normal;
-               }
-          }
+     }
+     .sub-menu-head ul{
+          position:relative;
+          max-height:0;
+          flex:1;
+          margin-left: 2%;
+          background: none;
+          border-radius: 0;
      }
 }

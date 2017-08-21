@@ -3,8 +3,7 @@
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -18,230 +17,164 @@ body {
 }
 /*   Selectors that apply appropriate styles for each color.
      Any themed hoverable will be highlighted based off their design color.  */
-.pri,
-.primary {
-  background: #aa3399;
+.pri {
+  background: #afd1ff;
+  color: #315380;
+}
+.pri.hover:hover {
+  background: #fcfdff;
+  color: #315380;
+}
+.pri.bordered {
+  border: 5px solid #62a5ff;
+}
+.c1p {
+  background: #ffafd1;
+  color: #315380;
+}
+.c1p.hover:hover {
+  background: #fffcfd;
+  color: #315380;
+}
+.c1p.bordered {
+  border: 5px solid #ff62a5;
+}
+.c2p {
+  background: #d1ffaf;
+  color: #315380;
+}
+.c2p.hover:hover {
+  background: #fdfffc;
+  color: #315380;
+}
+.c2p.bordered {
+  border: 5px solid #a5ff62;
+}
+.sec {
+  background: #fcfdff;
+  color: #315380;
+}
+.sec.hover:hover {
+  background: #ffffff;
+  color: #315380;
+}
+.sec.bordered {
+  border: 5px solid #afd1ff;
+}
+.c1s {
+  background: #fffcfd;
+  color: #315380;
+}
+.c1s.hover:hover {
+  background: #ffffff;
+  color: #315380;
+}
+.c1s.bordered {
+  border: 5px solid #ffafd1;
+}
+.c2s {
+  background: #fdfffc;
+  color: #315380;
+}
+.c2s.hover:hover {
+  background: #ffffff;
+  color: #315380;
+}
+.c2s.bordered {
+  border: 5px solid #d1ffaf;
+}
+.ter {
+  background: #62a5ff;
   color: #ffffff;
 }
-.pri.hover:hover,
-.primary.hover:hover {
-  background: #ce5cbe;
+.ter.hover:hover {
+  background: #afd1ff;
+  color: #315380;
+}
+.ter.bordered {
+  border: 5px solid #1679ff;
+}
+.c1t {
+  background: #ff62a5;
   color: #ffffff;
 }
-.pri.bordered,
-.primary.bordered {
-  border: 5px solid #6f2164;
+.c1t.hover:hover {
+  background: #ffafd1;
+  color: #315380;
 }
-.c1p,
-.c1primary {
-  background: #99aa33;
+.c1t.bordered {
+  border: 5px solid #ff1679;
+}
+.c2t {
+  background: #a5ff62;
+  color: #315380;
+}
+.c2t.hover:hover {
+  background: #d1ffaf;
+  color: #315380;
+}
+.c2t.bordered {
+  border: 5px solid #79ff16;
+}
+.qua {
+  background: #315380;
   color: #ffffff;
 }
-.c1p.hover:hover,
-.c1primary.hover:hover {
-  background: #bece5c;
-  color: #381132;
-}
-.c1p.bordered,
-.c1primary.bordered {
-  border: 5px solid #646f21;
-}
-.c2p,
-.c2primary {
-  background: #3399aa;
+.qua.hover:hover {
+  background: #4776b7;
   color: #ffffff;
 }
-.c2p.hover:hover,
-.c2primary.hover:hover {
-  background: #5cbece;
+.qua.bordered {
+  border: 5px solid #1c2f48;
+}
+.c1q {
+  background: #803153;
   color: #ffffff;
 }
-.c2p.bordered,
-.c2primary.bordered {
-  border: 5px solid #21646f;
-}
-.sec,
-.secondary {
-  background: #ce5cbe;
+.c1q.hover:hover {
+  background: #b74776;
   color: #ffffff;
 }
-.sec.hover:hover,
-.secondary.hover:hover {
-  background: #e096d5;
+.c1q.bordered {
+  border: 5px solid #481c2f;
+}
+.c2q {
+  background: #538031;
   color: #ffffff;
 }
-.sec.bordered,
-.secondary.bordered {
-  border: 5px solid #aa3399;
-}
-.c1s,
-.c1secondary {
-  background: #bece5c;
-  color: #381132;
-}
-.c1s.hover:hover,
-.c1secondary.hover:hover {
-  background: #d5e096;
-  color: #381132;
-}
-.c1s.bordered,
-.c1secondary.bordered {
-  border: 5px solid #99aa33;
-}
-.c2s,
-.c2secondary {
-  background: #5cbece;
+.c2q.hover:hover {
+  background: #76b747;
   color: #ffffff;
 }
-.c2s.hover:hover,
-.c2secondary.hover:hover {
-  background: #96d5e0;
-  color: #381132;
+.c2q.bordered {
+  border: 5px solid #2f481c;
 }
-.c2s.bordered,
-.c2secondary.bordered {
-  border: 5px solid #3399aa;
-}
-.ter,
-.tertiary {
-  background: #6f2164;
-  color: #ffffff;
-}
-.ter.hover:hover,
-.tertiary.hover:hover {
-  background: #aa3399;
-  color: #ffffff;
-}
-.ter.bordered,
-.tertiary.bordered {
-  border: 5px solid #34102f;
-}
-.c1t,
-.c1tertiary {
-  background: #646f21;
-  color: #ffffff;
-}
-.c1t.hover:hover,
-.c1tertiary.hover:hover {
-  background: #99aa33;
-  color: #ffffff;
-}
-.c1t.bordered,
-.c1tertiary.bordered {
-  border: 5px solid #2f3410;
-}
-.c2t,
-.c2tertiary {
-  background: #21646f;
-  color: #ffffff;
-}
-.c2t.hover:hover,
-.c2tertiary.hover:hover {
-  background: #3399aa;
-  color: #ffffff;
-}
-.c2t.bordered,
-.c2tertiary.bordered {
-  border: 5px solid #102f34;
-}
-.qua,
-.quaternary {
-  background: #381132;
-  color: #ffffff;
-}
-.qua.hover:hover,
-.quaternary.hover:hover {
-  background: #722267;
-  color: #ffffff;
-}
-.qua.bordered,
-.quaternary.bordered {
-  border: 5px solid #000000;
-}
-.c1q,
-.c1quaternary {
-  background: #323811;
-  color: #ffffff;
-}
-.c1q.hover:hover,
-.c1quaternary.hover:hover {
-  background: #677222;
-  color: #ffffff;
-}
-.c1q.bordered,
-.c1quaternary.bordered {
-  border: 5px solid #000000;
-}
-.c2q,
-.c2quaternary {
-  background: #113238;
-  color: #ffffff;
-}
-.c2q.hover:hover,
-.c2quaternary.hover:hover {
-  background: #226772;
-  color: #ffffff;
-}
-.c2q.bordered,
-.c2quaternary.bordered {
-  border: 5px solid #000000;
+/*   Page title and Collapse button holder   */
+.nav-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 /*   Wrapper for nav contents.
      (This is how the nav width is consistent with the page main element)  */
 .nav-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-preferred-size: 1170px;
-      flex-basis: 1170px;
+  flex-direction: row;
+  flex-basis: 1170px;
   max-width: 1170px;
-}
-/*   Page title and Collapse button holder   */
-.nav-head {
-  height: inherit;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 /*   Nav tag and children element styling    */
 nav {
   position: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   height: 70px;
   width: 100%;
-}
-nav .page-title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 70px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 nav ul {
   display: inherit;
   list-style: none;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 0;
-  padding: 0;
+  align-items: center;
 }
 nav a {
   display: inherit;
@@ -251,218 +184,125 @@ nav a {
 nav li {
   margin: 0 5px;
 }
-nav .sub-menu-head {
-  display: inherit;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-nav .sub-menu-head > a:after {
-  padding-left: 5px;
-  content: '\25BC';
-}
-nav .sub-menu-head ul {
-  display: inherit;
-  position: absolute;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  margin: 0;
-  overflow: hidden;
-  visibility: hidden;
-  max-height: 0;
-  -webkit-transition-delay: 0.01s;
-          transition-delay: 0.01s;
-  -webkit-transition: visibility 1s, max-height 1s linear;
-  transition: visibility 1s, max-height 1s linear;
-  opacity: 0;
-  -webkit-transition: visibility 1s, max-height 1s ease-out, opacity 1s ease-out;
-  transition: visibility 1s, max-height 1s ease-out, opacity 1s ease-out;
-}
-nav .sub-menu-head ul li {
-  margin: 2px;
-}
-nav .sub-menu-head:hover ul {
-  /*   Fix for Edge 40 transition issues     */
-  visibility: visible;
-  max-height: 500px;
-  -webkit-transition-delay: 0.01s;
-          transition-delay: 0.01s;
-  opacity: 1.0;
-}
-nav .sub-menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.sub-menu {
   display: flex;
 }
-nav .sub-menu.right {
+.sub-menu.right {
   /*   Fix for IE Flex Absolute positioning    */
   position: relative;
 }
-nav .sub-menu.right > ul {
+.sub-menu.right > ul {
   /*   Fix for IE Flex Absolute positioning    */
   right: 0;
   white-space: nowrap;
 }
-nav .sub-menu a {
+.sub-menu-head > a:after {
+  padding-left: 5px;
+  content: '\25BC';
+}
+.sub-menu-head ul {
+  display: inherit;
+  position: absolute;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 0;
+  overflow: hidden;
+  visibility: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: visibility 1s, max-height 1s linear, opacity 1s linear;
+}
+.sub-menu-head li {
+  margin: 2px;
+}
+.sub-menu-head:hover ul {
+  visibility: visible;
+  max-height: 500px;
+  /*   Fix for Edge 40 opacity transition flickering     */
+  transition-delay: 0.01s;
+  opacity: 1.0;
+}
+.sub-menu a {
   padding: 5px;
   margin: 0;
+}
+.page-title {
+  display: flex;
+  height: 70px;
+  align-items: center;
 }
 /*   The collapse div that functions as the menu button     */
 .collapse-btn {
   height: 56px;
   width: 56px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 4px;
-  -webkit-box-ordinal-group: 3;
-      -ms-flex-order: 2;
-          order: 2;
+  order: 2;
   border-radius: 8px;
-  z-index: 100;
 }
 .collapse-btn .bar {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
   width: 95%;
   margin: 3px;
   border-radius: 100px;
 }
-@media (min-width: 978px) {
-  .collapse-btn {
-    display: none;
-  }
-}
 @media (max-width: 978px) {
+  .collapse-btn {
+    display: flex;
+  }
   .nav-wrapper {
     display: block;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 0;
-            flex: 1 0;
     overflow: hidden;
-    max-height: 500px;
     visibility: hidden;
     max-height: 0;
-    -webkit-transition-delay: 0.01s;
-            transition-delay: 0.01s;
-    -webkit-transition: visibility 1s, max-height 1s linear;
-    transition: visibility 1s, max-height 1s linear;
     opacity: 0;
-    -webkit-transition: visibility 1s, max-height 1s ease-out, opacity 1s ease-out;
-    transition: visibility 1s, max-height 1s ease-out, opacity 1s ease-out;
+    transition: visibility 1s, max-height 1s linear, opacity 1s linear;
   }
   .nav-wrapper > ul {
     display: block;
   }
   nav {
     display: block;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
     overflow: hidden;
     height: auto;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-  }
-  nav ul {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
   }
   nav:hover .nav-wrapper {
     visibility: visible;
     max-height: 500px;
-    -webkit-transition-delay: 0.01s;
-            transition-delay: 0.01s;
+    /*   Fix for Edge 40 opacity transition flickering     */
+    transition-delay: 0.01s;
     opacity: 1.0;
   }
   nav li {
     margin: 0;
   }
-  nav li,
-  nav a {
-    -ms-flex-item-align: stretch;
-        align-self: stretch;
-  }
-  nav .sub-menu-head ul {
+  .sub-menu-head ul {
     position: relative;
     max-height: 0;
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    flex: 1;
     margin-left: 2%;
     background: none;
     border-radius: 0;
   }
-  nav .sub-menu.right {
-    /*   Ignore right-aligned submenus    */
-    position: relative;
-  }
-  nav .sub-menu.right > ul {
-    right: auto;
-    white-space: normal;
-  }
 }
 /*   Positioning wrapper classes  */
 .left {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  flex: 1;
+  justify-content: flex-start;
 }
 .right {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  flex: 1;
+  justify-content: flex-end;
 }
 .center {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex: 1;
+  justify-content: center;
 }
 .rounded {
   border-radius: 10px;
@@ -470,9 +310,9 @@ nav .sub-menu a {
 nav {
   position: inherit;
   font: 20px Impact, Charcoal, sans-serif;
-  -webkit-box-shadow: 0px 0px 50px #6f2164;
-          box-shadow: 0px 0px 50px #6f2164;
+  box-shadow: 0px 0px 50px #62a5ff;
 }
 nav .sub-menu {
   font: 16px Impact, Charcoal, sans-serif;
 }
+/*# sourceMappingURL=Spray.css.map */
