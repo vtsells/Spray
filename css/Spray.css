@@ -245,6 +245,7 @@ nav .sub-menu-head ul {
   overflow: hidden;
   visibility: hidden;
   max-height: 0;
+  transition-delay: 0.01s;
   transition: visibility 1s, max-height 1s linear;
   opacity: 0;
   transition: visibility 1s, max-height 1s ease-out, opacity 1s ease-out;
@@ -254,9 +255,9 @@ nav .sub-menu-head ul li {
 }
 nav .sub-menu-head:hover ul {
   /*   Fix for Edge 40 transition issues     */
-  transition-delay: 0.1s;
   visibility: visible;
   max-height: 500px;
+  transition-delay: 0.01s;
   opacity: 1.0;
 }
 nav .sub-menu {
@@ -301,12 +302,14 @@ nav .sub-menu a {
 }
 @media (max-width: 978px) {
   .nav-wrapper {
+    display: block;
     flex-direction: column;
     flex: 1 0;
     overflow: hidden;
     max-height: 500px;
     visibility: hidden;
     max-height: 0;
+    transition-delay: 0.01s;
     transition: visibility 1s, max-height 1s linear;
     opacity: 0;
     transition: visibility 1s, max-height 1s ease-out, opacity 1s ease-out;
@@ -315,6 +318,7 @@ nav .sub-menu a {
     display: block;
   }
   nav {
+    display: block;
     flex-direction: column;
     overflow: hidden;
     height: auto;
@@ -327,6 +331,7 @@ nav .sub-menu a {
   nav:hover .nav-wrapper {
     visibility: visible;
     max-height: 500px;
+    transition-delay: 0.01s;
     opacity: 1.0;
   }
   nav li {
