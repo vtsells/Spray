@@ -15,139 +15,265 @@ body {
   width: 100%;
   height: 100%;
 }
+/*   Header Images should always be responsive    */
+header {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+header picture,
+header img {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+  margin: 0 auto;
+  justify-content: center;
+}
 /*   Selectors that apply appropriate styles for each color.
      Any themed hoverable will be highlighted based off their design color.  */
 .pri {
-  background: #afd1ff;
-  color: #315380;
+  background: #7699ac;
+  color: #ffffff;
 }
 .pri.hover:hover {
-  background: #fcfdff;
-  color: #315380;
+  background: #a6bcc9;
+  color: #ffffff;
 }
 .pri.bordered {
-  border: 5px solid #62a5ff;
+  border: 5px solid #517385;
+}
+.pri.trans-light {
+  background: rgba(118, 153, 172, 0.9);
+}
+.pri.trans {
+  background: rgba(118, 153, 172, 0.6);
+}
+.pri.trans-heavy {
+  background: rgba(118, 153, 172, 0.3);
 }
 .c1p {
-  background: #ffafd1;
-  color: #315380;
+  background: #ac7699;
+  color: #ffffff;
 }
 .c1p.hover:hover {
-  background: #fffcfd;
-  color: #315380;
+  background: #c9a6bc;
+  color: #ffffff;
 }
 .c1p.bordered {
-  border: 5px solid #ff62a5;
+  border: 5px solid #855173;
+}
+.c1p.trans-light {
+  background: rgba(172, 118, 153, 0.9);
+}
+.c1p.trans {
+  background: rgba(172, 118, 153, 0.6);
+}
+.c1p.trans-heavy {
+  background: rgba(172, 118, 153, 0.3);
 }
 .c2p {
-  background: #d1ffaf;
-  color: #315380;
+  background: #99ac76;
+  color: #ffffff;
 }
 .c2p.hover:hover {
-  background: #fdfffc;
-  color: #315380;
+  background: #bcc9a6;
+  color: #283942;
 }
 .c2p.bordered {
-  border: 5px solid #a5ff62;
+  border: 5px solid #738551;
+}
+.c2p.trans-light {
+  background: rgba(153, 172, 118, 0.9);
+}
+.c2p.trans {
+  background: rgba(153, 172, 118, 0.6);
+}
+.c2p.trans-heavy {
+  background: rgba(153, 172, 118, 0.3);
 }
 .sec {
-  background: #fcfdff;
-  color: #315380;
+  background: #a6bcc9;
+  color: #ffffff;
 }
 .sec.hover:hover {
-  background: #ffffff;
-  color: #315380;
+  background: #d5e0e6;
+  color: #283942;
 }
 .sec.bordered {
-  border: 5px solid #afd1ff;
+  border: 5px solid #7699ac;
+}
+.sec.trans-light {
+  background: rgba(166, 188, 201, 0.9);
+}
+.sec.trans {
+  background: rgba(166, 188, 201, 0.6);
+}
+.sec.trans-heavy {
+  background: rgba(166, 188, 201, 0.3);
 }
 .c1s {
-  background: #fffcfd;
-  color: #315380;
+  background: #c9a6bc;
+  color: #ffffff;
 }
 .c1s.hover:hover {
-  background: #ffffff;
-  color: #315380;
+  background: #e6d5e0;
+  color: #283942;
 }
 .c1s.bordered {
-  border: 5px solid #ffafd1;
+  border: 5px solid #ac7699;
+}
+.c1s.trans-light {
+  background: rgba(201, 166, 188, 0.9);
+}
+.c1s.trans {
+  background: rgba(201, 166, 188, 0.6);
+}
+.c1s.trans-heavy {
+  background: rgba(201, 166, 188, 0.3);
 }
 .c2s {
-  background: #fdfffc;
-  color: #315380;
+  background: #bcc9a6;
+  color: #283942;
 }
 .c2s.hover:hover {
-  background: #ffffff;
-  color: #315380;
+  background: #e0e6d5;
+  color: #283942;
 }
 .c2s.bordered {
-  border: 5px solid #d1ffaf;
+  border: 5px solid #99ac76;
+}
+.c2s.trans-light {
+  background: rgba(188, 201, 166, 0.9);
+}
+.c2s.trans {
+  background: rgba(188, 201, 166, 0.6);
+}
+.c2s.trans-heavy {
+  background: rgba(188, 201, 166, 0.3);
 }
 .ter {
-  background: #62a5ff;
+  background: #517385;
   color: #ffffff;
 }
 .ter.hover:hover {
-  background: #afd1ff;
-  color: #315380;
+  background: #7699ac;
+  color: #ffffff;
 }
 .ter.bordered {
-  border: 5px solid #1679ff;
+  border: 5px solid #344955;
+}
+.ter.trans-light {
+  background: rgba(81, 115, 133, 0.9);
+}
+.ter.trans {
+  background: rgba(81, 115, 133, 0.6);
+}
+.ter.trans-heavy {
+  background: rgba(81, 115, 133, 0.3);
 }
 .c1t {
-  background: #ff62a5;
+  background: #855173;
   color: #ffffff;
 }
 .c1t.hover:hover {
-  background: #ffafd1;
-  color: #315380;
+  background: #ac7699;
+  color: #ffffff;
 }
 .c1t.bordered {
-  border: 5px solid #ff1679;
+  border: 5px solid #553449;
+}
+.c1t.trans-light {
+  background: rgba(133, 81, 115, 0.9);
+}
+.c1t.trans {
+  background: rgba(133, 81, 115, 0.6);
+}
+.c1t.trans-heavy {
+  background: rgba(133, 81, 115, 0.3);
 }
 .c2t {
-  background: #a5ff62;
-  color: #315380;
+  background: #738551;
+  color: #ffffff;
 }
 .c2t.hover:hover {
-  background: #d1ffaf;
-  color: #315380;
+  background: #99ac76;
+  color: #ffffff;
 }
 .c2t.bordered {
-  border: 5px solid #79ff16;
+  border: 5px solid #495534;
+}
+.c2t.trans-light {
+  background: rgba(115, 133, 81, 0.9);
+}
+.c2t.trans {
+  background: rgba(115, 133, 81, 0.6);
+}
+.c2t.trans-heavy {
+  background: rgba(115, 133, 81, 0.3);
 }
 .qua {
-  background: #315380;
+  background: #283942;
   color: #ffffff;
 }
 .qua.hover:hover {
-  background: #4776b7;
+  background: #456272;
   color: #ffffff;
 }
 .qua.bordered {
-  border: 5px solid #1c2f48;
+  border: 5px solid #0b1013;
+}
+.qua.trans-light {
+  background: rgba(40, 57, 66, 0.9);
+}
+.qua.trans {
+  background: rgba(40, 57, 66, 0.6);
+}
+.qua.trans-heavy {
+  background: rgba(40, 57, 66, 0.3);
 }
 .c1q {
-  background: #803153;
+  background: #422839;
   color: #ffffff;
 }
 .c1q.hover:hover {
-  background: #b74776;
+  background: #724562;
   color: #ffffff;
 }
 .c1q.bordered {
-  border: 5px solid #481c2f;
+  border: 5px solid #130b10;
+}
+.c1q.trans-light {
+  background: rgba(66, 40, 57, 0.9);
+}
+.c1q.trans {
+  background: rgba(66, 40, 57, 0.6);
+}
+.c1q.trans-heavy {
+  background: rgba(66, 40, 57, 0.3);
 }
 .c2q {
-  background: #538031;
+  background: #394228;
   color: #ffffff;
 }
 .c2q.hover:hover {
-  background: #76b747;
+  background: #627245;
   color: #ffffff;
 }
 .c2q.bordered {
-  border: 5px solid #2f481c;
+  border: 5px solid #10130b;
+}
+.c2q.trans-light {
+  background: rgba(57, 66, 40, 0.9);
+}
+.c2q.trans {
+  background: rgba(57, 66, 40, 0.6);
+}
+.c2q.trans-heavy {
+  background: rgba(57, 66, 40, 0.3);
 }
 /*   Wrapper for nav contents.
      (This is how the nav width is consistent with the page main element)  */
@@ -178,11 +304,11 @@ nav li {
   margin: 0 5px;
 }
 .sub-menu.right {
-  /*   Fix for IE Flex Absolute positioning    */
+  /*   Fix for IE Absolute positioning    */
   position: relative;
 }
 .sub-menu.right > ul {
-  /*   Fix for IE Flex Absolute positioning    */
+  /*   Fix for IE Absolute positioning    */
   right: 0;
   white-space: nowrap;
 }
@@ -279,6 +405,9 @@ nav li {
     background: none;
     border-radius: 0;
   }
+  .sub-menu.right ul {
+    white-space: normal;
+  }
 }
 /*   Positioning wrapper classes  */
 .left {
@@ -300,8 +429,10 @@ nav li {
   border-radius: 10px;
 }
 nav {
+  margin-top: -70px;
+  position: relative;
   font: 20px Impact, Charcoal, sans-serif;
-  box-shadow: 0px 0px 50px #62a5ff;
+  box-shadow: 0px 0px 50px #517385;
 }
 nav .sub-menu {
   font: 16px Impact, Charcoal, sans-serif;
