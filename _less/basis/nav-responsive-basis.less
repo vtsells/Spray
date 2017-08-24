@@ -4,14 +4,14 @@
 
 /*   Page title and Collapse button holder   */
 .nav-head{
-     display: none;
+     //display: none;
      justify-content: space-between;
      align-items: center;
 }
 .collapse-btn{
+     display:none;
      height:@nav-height*.8;
      width:@nav-height*.8;
-     display: flex;
      flex-direction: column;
      align-items: center;
      justify-content: center;
@@ -31,9 +31,13 @@
      display: flex;
      height: @nav-height;
      align-items: center;
+     padding:5px;
 }
 
 @media (max-width: @nav-collapse){
+     .collapse-btn{
+          display:flex;
+     }
      //
      .nav-head{
           display:flex;
@@ -66,7 +70,14 @@
           background: none;
           border-radius: 0;
      }
+     .sub-menu ul{
+          text-align: left !important;
+     }
      .sub-menu.right ul{
           white-space: normal;
+     }
+     .sub-menu.center ul{
+          right:auto;
+          left:auto;
      }
 }

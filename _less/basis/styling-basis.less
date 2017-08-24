@@ -17,19 +17,22 @@ html,body{
 }
 
 /*   Header Images should always be responsive    */
-header {
-     display: flex;
-     flex:1;
-     justify-content: center;
+.nav-bg-responsive {
      width:100%;
-     height:auto;
+     height: @nav-height;
      overflow: hidden;
+     z-index:99;
 }
-header picture, header img{
+.nav-bg-responsive picture, .nav-bg-responsive img{
      position:relative;
      display: flex;
      flex-grow:1;
-     flex-shrink: 1;
+     flex-shrink:0;
      margin:0 auto;
      justify-content: center;
+}
+
+/*   */
+.fixed{
+     position: fixed;
 }

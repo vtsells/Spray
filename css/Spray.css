@@ -16,22 +16,24 @@ body {
   height: 100%;
 }
 /*   Header Images should always be responsive    */
-header {
-  display: flex;
-  flex: 1;
-  justify-content: center;
+.nav-bg-responsive {
   width: 100%;
-  height: auto;
+  height: 70px;
   overflow: hidden;
+  z-index: 99;
 }
-header picture,
-header img {
+.nav-bg-responsive picture,
+.nav-bg-responsive img {
   position: relative;
   display: flex;
   flex-grow: 1;
-  flex-shrink: 1;
+  flex-shrink: 0;
   margin: 0 auto;
   justify-content: center;
+}
+/*   */
+.fixed {
+  position: fixed;
 }
 /*   Selectors that apply appropriate styles for each color.
      Any themed hoverable will be highlighted based off their design color.  */
@@ -289,6 +291,8 @@ nav {
   justify-content: center;
   height: 70px;
   width: 100%;
+  position: fixed;
+  z-index: 100;
 }
 nav ul {
   display: inherit;
@@ -311,6 +315,16 @@ nav li {
   /*   Fix for IE Absolute positioning    */
   right: 0;
   white-space: nowrap;
+}
+.sub-menu.center {
+  /*   Fix for IE Absolute positioning    */
+  position: relative;
+}
+.sub-menu.center > ul {
+  /*   Fix for IE Absolute positioning    */
+  right: -50%;
+  left: -50%;
+  white-space: normal;
 }
 .sub-menu-head > a:after {
   padding-left: 5px;
@@ -341,14 +355,13 @@ nav li {
 /*   The collapse div that functions as the menu button     */
 /*   Page title and Collapse button holder   */
 .nav-head {
-  display: none;
   justify-content: space-between;
   align-items: center;
 }
 .collapse-btn {
+  display: none;
   height: 56px;
   width: 56px;
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -366,8 +379,12 @@ nav li {
   display: flex;
   height: 70px;
   align-items: center;
+  padding: 5px;
 }
 @media (max-width: 978px) {
+  .collapse-btn {
+    display: flex;
+  }
   .nav-head {
     display: flex;
   }
@@ -405,8 +422,15 @@ nav li {
     background: none;
     border-radius: 0;
   }
+  .sub-menu ul {
+    text-align: left !important;
+  }
   .sub-menu.right ul {
     white-space: normal;
+  }
+  .sub-menu.center ul {
+    right: auto;
+    left: auto;
   }
 }
 /*   Positioning wrapper classes  */
@@ -429,12 +453,17 @@ nav li {
   border-radius: 10px;
 }
 nav {
-  margin-top: -70px;
   position: relative;
   font: 20px Impact, Charcoal, sans-serif;
   box-shadow: 0px 0px 50px #517385;
 }
 nav .sub-menu {
   font: 16px Impact, Charcoal, sans-serif;
+}
+nav .sub-menu ul {
+  text-align: center;
+}
+nav .page-title {
+  font-size: 40px;
 }
 /*# sourceMappingURL=Spray.css.map */

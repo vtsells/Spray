@@ -14,6 +14,8 @@ nav {
      justify-content: center;
      height: @nav-height;
      width:100%;
+     position: fixed;
+     z-index:100;
      //
      & ul{
           display: inherit;
@@ -39,6 +41,17 @@ nav {
           /*   Fix for IE Absolute positioning    */
           right:0;
           white-space: nowrap;
+     }
+}
+.sub-menu.center{
+     /*   Fix for IE Absolute positioning    */
+     position: relative;
+     //
+     &>ul{
+          /*   Fix for IE Absolute positioning    */
+          right:-50%;
+          left:-50%;
+          white-space: normal;
      }
 }
 //

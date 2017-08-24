@@ -18,7 +18,7 @@
 
 //   Adds additional styling to the nav bar and sub menus
 nav{
-     margin-top:-@nav-height;
+     //margin-top:-@nav-height;
      position: relative;
      //z-index:100;
 
@@ -26,6 +26,12 @@ nav{
      //
      & .sub-menu{
           .font(@nav-font-size*.8,@nav-font-family);
+          & ul{
+               text-align: center;
+          }
+     }
+     .page-title{
+          font-size: 40px;
      }
      .box-shadow(0px 0px 50px, @tertiary);
 }
