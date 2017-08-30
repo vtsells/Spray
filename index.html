@@ -10,23 +10,30 @@
     <!--onclick is a fix for mobile Safari-->
     <nav onclick="" class="fixed qua trans">
       <div class="nav-head">
-        <div data-toggle="nav-collapse" class="collapse-btn ter hover"><span class="bar c2p"></span><span class="bar c2p"></span><span class="bar c2p"></span></div>
         <div class="page-title">page title</div>
+        <div data-toggle="nav-collapse" class="collapse-btn ter hover"><span class="bar c2p"></span><span class="bar c2p"></span><span class="bar c2p"></span></div>
       </div>
       <div class="nav-wrapper">
         <ul class="center">
           <li><a class="c2s hover">link 3</a></li>
-          <li class="sub-menu-head"><a class="c2p hover">link 4</a>
+          <li class="menu-head"><a class="c2p hover">link 4</a>
             <div class="sub-menu center">
-              <ul class="rounded qua">
-                <li><a class="c1t hover">sub link 1</a></li>
+              <ul data-state="closed" class="rounded qua">
+                <li><a href="https://www.yahoo.com" class="c1t hover">sub link 1</a></li>
                 <li><a class="c1q hover">sub link 2</a></li>
                 <li><a class="c1t hover">sub link 3</a></li>
                 <li><a class="c1q hover">really long sub link because I freaking can.  Yep, really long</a></li>
               </ul>
             </div>
           </li>
-          <li><a class="c2t hover">link 5</a>     </li>
+          <li><a class="c2t hover">link 5</a></li>
+          <li class="menu-head"><a class="c2p hover">link 4</a>
+            <div class="sub-menu center">
+              <ul data-state="closed" class="rounded qua">
+                <li><a class="c1t hover">sub link 1</a> </li>
+              </ul>
+            </div>
+          </li>
         </ul>
       </div>
     </nav>
@@ -74,4 +81,5 @@
     </main>
     <footer></footer>
   </body>
+  <script type="text/javascript" src="js/Spray.js"></script>
 </html>

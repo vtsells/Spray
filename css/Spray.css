@@ -326,28 +326,35 @@ nav li {
   left: -50%;
   white-space: normal;
 }
-.sub-menu-head > a:after {
+.menu-head {
+  /*& ul{
+          display: block;
+          position:absolute;
+          overflow: hidden;
+          //.nav-sub-menu-hide();
+     }
+     li{
+          margin: 2px;
+     }
+     //
+     &:hover ul{
+          //.nav-sub-menu-show();
+     }*/
+}
+.menu-head > a:after {
   padding-left: 5px;
   content: '\25BC';
 }
-.sub-menu-head ul {
+.sub-menu ul {
   display: block;
   position: absolute;
   overflow: hidden;
-  visibility: hidden;
-  max-height: 0;
-  opacity: 0;
-  transition: visibility 1s, max-height 1s linear, opacity 1s linear;
+  transition: height 0.5s ease-out;
+  height: 0;
 }
-.sub-menu-head li {
-  margin: 2px;
-}
-.sub-menu-head:hover ul {
-  visibility: visible;
-  max-height: 500px;
-  /*   Fix for Edge 40 opacity transition flickering     */
-  transition-delay: 0.01s;
-  opacity: 1.0;
+.sub-menu li {
+  height: auto;
+  margin: 0 2px;
 }
 .sub-menu a {
   padding: 5px;
@@ -423,6 +430,7 @@ nav li {
     border-radius: 0;
   }
   .sub-menu ul {
+    position: relative;
     text-align: left !important;
   }
   .sub-menu.right ul {
@@ -435,17 +443,14 @@ nav li {
 }
 /*   Positioning wrapper classes  */
 .left {
-  display: flex;
   flex: 1;
   justify-content: flex-start;
 }
 .right {
-  display: flex;
   flex: 1;
   justify-content: flex-end;
 }
 .center {
-  display: flex;
   flex: 1;
   justify-content: center;
 }

@@ -2,20 +2,24 @@
 //onclick is a fix for mobile Safari
 nav.fixed.qua.trans(onclick="")
      .nav-head
+          .page-title page title
           .collapse-btn.ter.hover(data-toggle="nav-collapse")
                span.bar.c2p
                span.bar.c2p
                span.bar.c2p
-          .page-title page title
      .nav-wrapper
           ul.center
                li #[a.c2s.hover link 3]
-               li.sub-menu-head #[a.c2p.hover link 4]
+               li.menu-head #[a.c2p.hover link 4]
                     .sub-menu.center
-                         ul.rounded.qua
-                              li #[a.c1t.hover sub link 1]
+                         ul.rounded.qua(data-state="closed")
+                              li #[a.c1t.hover(href="https://www.yahoo.com") sub link 1]
                               li #[a.c1q.hover sub link 2]
                               li #[a.c1t.hover sub link 3]
                               li #[a.c1q.hover really long sub link because I freaking can.  Yep, really long]
-               li #[a.c2t.hover link 5]     
+               li #[a.c2t.hover link 5]
+               li.menu-head #[a.c2p.hover link 4]
+                    .sub-menu.center
+                         ul.rounded.qua(data-state="closed")
+                              li #[a.c1t.hover sub link 1] 
 //Nav End
