@@ -48,7 +48,9 @@
           & >ul{
                display:block;
           }
-          .nav-sub-menu-hide();
+          height:0;
+          transition: height .5s ease-out;
+          //.nav-sub-menu-hide();
      }
      //
      nav {
@@ -56,7 +58,7 @@
           overflow: hidden;
           height:auto;
           &:hover .nav-wrapper{
-               .nav-sub-menu-show();
+               //.nav-sub-menu-show();
           }
           & li{
                margin: 0;

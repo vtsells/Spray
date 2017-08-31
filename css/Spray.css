@@ -398,10 +398,8 @@ nav li {
   .nav-wrapper {
     display: block;
     overflow: hidden;
-    visibility: hidden;
-    max-height: 0;
-    opacity: 0;
-    transition: visibility 1s, max-height 1s linear, opacity 1s linear;
+    height: 0;
+    transition: height 0.5s ease-out;
   }
   .nav-wrapper > ul {
     display: block;
@@ -410,13 +408,6 @@ nav li {
     display: block;
     overflow: hidden;
     height: auto;
-  }
-  nav:hover .nav-wrapper {
-    visibility: visible;
-    max-height: 500px;
-    /*   Fix for Edge 40 opacity transition flickering     */
-    transition-delay: 0.01s;
-    opacity: 1.0;
   }
   nav li {
     margin: 0;
