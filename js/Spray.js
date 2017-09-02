@@ -60,6 +60,9 @@ function toggleMenu(){
           this.close();
      }
 }
+function getState(elem){
+     return elem.getAttribute("data-state");
+}
 function toggleState(elem, open, close){
      var state =elem.getAttribute("data-state")==open?close:open
      elem.setAttribute("data-state", state);
@@ -80,5 +83,9 @@ window.addEventListener("resize",function(event){
           open_menu.close();
           navWrapper.style.height = null;
           open_menu = null;
+     }
+     if(getState(navCollapse)=="open"){
+          toggleState(navCollapse, "open", "close");
+          navCollapse.close();
      }
 });
