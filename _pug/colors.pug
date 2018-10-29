@@ -4,56 +4,455 @@ head
           .page{
                display:flex;
                font:20px "Arial";
+               flex-wrap:wrap;
+               background:url("./imgs/storm.jpg");
+               background-position:center;
           }
           .wrapper{
                display:flex;
                flex-direction:column;
+               width:25%;
                justify-content:flex-start;
-               height:500px;
-               width:500px;
+               
           }
           .box{
                display:flex;
-               flex:1 0;
-               flex-wrap:wrap;
+               
+               height:50px;
                align-items:center;
                justify-content:center;
           }
 link(rel="stylesheet", type="text/css", href="css/Spray.css")
 .page     
      .wrapper
-          .box.pri.hover
-               | pri.hover       
-          .box.sec.hover
-               | sec.hover       
-          .box.ter.hover
-               | ter.hover       
-          .box.qua.hover
-               | qua.hover       
+            .box.pri
+               | pri     
+            .box.pri.text
+               | pri.text    
+            .box.pri.hover
+               | pri.hover     
+            .box.pri.bordered
+               | pri.bordered
+            .box.pri.trans-light
+               | pri.trans-light 
+            .box.pri.trans-light.text
+               | pri.trans-light.text 
+            .box.pri.trans-light.hover
+               | pri.trans-light.hover
+            .box.pri.trans
+               | pri.trans 
+            .box.pri.trans.text
+               | pri.trans.text
+            .box.pri.trans.hover
+               | pri.trans.hover 
+            .box.pri.trans-heavy
+               | pri.trans-heavy
+            .box.pri.trans-heavy.text
+               | pri.trans-heavy.text 
+            .box.pri.trans-heavy.hover
+               | pri.trans-heavy.hover
      .wrapper
-          .box.c1p.hover
-               | c1p.hover       
-          .box.c1s.hover
-               | c1s.hover       
-          .box.c1t.hover
-               | c1t.hover       
-          .box.c1q.hover
-               | c1q.hover       
+            .box.c1p
+               | c1p     
+            .box.c1p.text
+               | c1p.text    
+            .box.c1p.hover
+               | c1p.hover     
+            .box.c1p.bordered
+               | c1p.bordered
+            .box.c1p.trans-light
+               | c1p.trans-light 
+            .box.c1p.trans-light.text
+               | c1p.trans-light.text 
+            .box.c1p.trans-light.hover
+               | c1p.trans-light.hover
+            .box.c1p.trans
+               | c1p.trans 
+            .box.c1p.trans.text
+               | c1p.trans.text
+            .box.c1p.trans.hover
+               | c1p.trans.hover 
+            .box.c1p.trans-heavy
+               | c1p.trans-heavy
+            .box.c1p.trans-heavy.text
+               | c1p.trans-heavy.text 
+            .box.c1p.trans-heavy.hover
+               | c1p.trans-heavy.hover   
      .wrapper
-          .box.c2p.hover
-               | c2p.hover       
-          .box.c2s.hover
-               | c2s.hover       
-          .box.c2t.hover
-               | c2t.hover       
-          .box.c2q.hover
-               | c2q.hover
+            .box.c2p
+               | c2p     
+            .box.c2p.text
+               | c2p.text    
+            .box.c2p.hover
+               | c2p.hover     
+            .box.c2p.bordered
+               | c2p.bordered
+            .box.c2p.trans-light
+               | c2p.trans-light 
+            .box.c2p.trans-light.text
+               | c2p.trans-light.text 
+            .box.c2p.trans-light.hover
+               | c2p.trans-light.hover
+            .box.c2p.trans
+               | c2p.trans 
+            .box.c2p.trans.text
+               | c2p.trans.text
+            .box.c2p.trans.hover
+               | c2p.trans.hover 
+            .box.c2p.trans-heavy
+               | c2p.trans-heavy
+            .box.c2p.trans-heavy.text
+               | c2p.trans-heavy.text 
+            .box.c2p.trans-heavy.hover
+               | c2p.trans-heavy.hover
      .wrapper
-          .box.c3p.hover
-               | c3p.hover       
-          .box.c3s.hover
-               | c3s.hover       
-          .box.c3t.hover
-               | c3t.hover       
-          .box.c3q.hover
-               | c3q.hover 
+            .box.c3p
+               | c3p     
+            .box.c3p.text
+               | c3p.text    
+            .box.c3p.hover
+               | c3p.hover     
+            .box.c3p.bordered
+               | c3p.bordered
+            .box.c3p.trans-light
+               | c3p.trans-light 
+            .box.c3p.trans-light.text
+               | c3p.trans-light.text 
+            .box.c3p.trans-light.hover
+               | c3p.trans-light.hover
+            .box.c3p.trans
+               | c3p.trans 
+            .box.c3p.trans.text
+               | c3p.trans.text
+            .box.c3p.trans.hover
+               | c3p.trans.hover 
+            .box.c3p.trans-heavy
+               | c3p.trans-heavy
+            .box.c3p.trans-heavy.text
+               | c3p.trans-heavy.text 
+            .box.c3p.trans-heavy.hover
+               | c3p.trans-heavy.hover
+     .wrapper
+            .box.sec
+               | sec     
+            .box.sec.text
+               | sec.text    
+            .box.sec.hover
+               | sec.hover     
+            .box.sec.bordered
+               | sec.bordered
+            .box.sec.trans-light
+               | sec.trans-light 
+            .box.sec.trans-light.text
+               | sec.trans-light.text 
+            .box.sec.trans-light.hover
+               | sec.trans-light.hover
+            .box.sec.trans
+               | sec.trans 
+            .box.sec.trans.text
+               | sec.trans.text
+            .box.sec.trans.hover
+               | sec.trans.hover 
+            .box.sec.trans-heavy
+               | sec.trans-heavy
+            .box.sec.trans-heavy.text
+               | sec.trans-heavy.text 
+            .box.sec.trans-heavy.hover
+               | sec.trans-heavy.hover
+     .wrapper
+            .box.c1s
+               | c1s     
+            .box.c1s.text
+               | c1s.text    
+            .box.c1s.hover
+               | c1s.hover     
+            .box.c1s.bordered
+               | c1s.bordered
+            .box.c1s.trans-light
+               | c1s.trans-light 
+            .box.c1s.trans-light.text
+               | c1s.trans-light.text 
+            .box.c1s.trans-light.hover
+               | c1s.trans-light.hover
+            .box.c1s.trans
+               | c1s.trans 
+            .box.c1s.trans.text
+               | c1s.trans.text
+            .box.c1s.trans.hover
+               | c1s.trans.hover 
+            .box.c1s.trans-heavy
+               | c1s.trans-heavy
+            .box.c1s.trans-heavy.text
+               | c1s.trans-heavy.text 
+            .box.c1s.trans-heavy.hover
+               | c1s.trans-heavy.hover   
+     .wrapper
+            .box.c2s
+               | c2s     
+            .box.c2s.text
+               | c2s.text    
+            .box.c2s.hover
+               | c2s.hover     
+            .box.c2s.bordered
+               | c2s.bordered
+            .box.c2s.trans-light
+               | c2s.trans-light 
+            .box.c2s.trans-light.text
+               | c2s.trans-light.text 
+            .box.c2s.trans-light.hover
+               | c2s.trans-light.hover
+            .box.c2s.trans
+               | c2s.trans 
+            .box.c2s.trans.text
+               | c2s.trans.text
+            .box.c2s.trans.hover
+               | c2s.trans.hover 
+            .box.c2s.trans-heavy
+               | c2s.trans-heavy
+            .box.c2s.trans-heavy.text
+               | c2s.trans-heavy.text 
+            .box.c2s.trans-heavy.hover
+               | c2s.trans-heavy.hover
+     .wrapper
+            .box.c3s
+               | c3s     
+            .box.c3s.text
+               | c3s.text    
+            .box.c3s.hover
+               | c3s.hover     
+            .box.c3s.bordered
+               | c3s.bordered
+            .box.c3s.trans-light
+               | c3s.trans-light 
+            .box.c3s.trans-light.text
+               | c3s.trans-light.text 
+            .box.c3s.trans-light.hover
+               | c3s.trans-light.hover
+            .box.c3s.trans
+               | c3s.trans 
+            .box.c3s.trans.text
+               | c3s.trans.text
+            .box.c3s.trans.hover
+               | c3s.trans.hover 
+            .box.c3s.trans-heavy
+               | c3s.trans-heavy
+            .box.c3s.trans-heavy.text
+               | c3s.trans-heavy.text 
+            .box.c3s.trans-heavy.hover
+               | c3s.trans-heavy.hover
+     .wrapper
+            .box.ter
+               | ter     
+            .box.ter.text
+               | ter.text    
+            .box.ter.hover
+               | ter.hover     
+            .box.ter.bordered
+               | ter.bordered
+            .box.ter.trans-light
+               | ter.trans-light 
+            .box.ter.trans-light.text
+               | ter.trans-light.text 
+            .box.ter.trans-light.hover
+               | ter.trans-light.hover
+            .box.ter.trans
+               | ter.trans 
+            .box.ter.trans.text
+               | ter.trans.text
+            .box.ter.trans.hover
+               | ter.trans.hover 
+            .box.ter.trans-heavy
+               | ter.trans-heavy
+            .box.ter.trans-heavy.text
+               | ter.trans-heavy.text 
+            .box.ter.trans-heavy.hover
+               | ter.trans-heavy.hover
+     .wrapper
+            .box.c1t
+               | c1t     
+            .box.c1t.text
+               | c1t.text    
+            .box.c1t.hover
+               | c1t.hover     
+            .box.c1t.bordered
+               | c1t.bordered
+            .box.c1t.trans-light
+               | c1t.trans-light 
+            .box.c1t.trans-light.text
+               | c1t.trans-light.text 
+            .box.c1t.trans-light.hover
+               | c1t.trans-light.hover
+            .box.c1t.trans
+               | c1t.trans 
+            .box.c1t.trans.text
+               | c1t.trans.text
+            .box.c1t.trans.hover
+               | c1t.trans.hover 
+            .box.c1t.trans-heavy
+               | c1t.trans-heavy
+            .box.c1t.trans-heavy.text
+               | c1t.trans-heavy.text 
+            .box.c1t.trans-heavy.hover
+               | c1t.trans-heavy.hover   
+     .wrapper
+            .box.c2t
+               | c2t     
+            .box.c2t.text
+               | c2t.text    
+            .box.c2t.hover
+               | c2t.hover     
+            .box.c2t.bordered
+               | c2t.bordered
+            .box.c2t.trans-light
+               | c2t.trans-light 
+            .box.c2t.trans-light.text
+               | c2t.trans-light.text 
+            .box.c2t.trans-light.hover
+               | c2t.trans-light.hover
+            .box.c2t.trans
+               | c2t.trans 
+            .box.c2t.trans.text
+               | c2t.trans.text
+            .box.c2t.trans.hover
+               | c2t.trans.hover 
+            .box.c2t.trans-heavy
+               | c2t.trans-heavy
+            .box.c2t.trans-heavy.text
+               | c2t.trans-heavy.text 
+            .box.c2t.trans-heavy.hover
+               | c2t.trans-heavy.hover
+     .wrapper
+            .box.c3t
+               | c3t     
+            .box.c3t.text
+               | c3t.text    
+            .box.c3t.hover
+               | c3t.hover     
+            .box.c3t.bordered
+               | c3t.bordered
+            .box.c3t.trans-light
+               | c3t.trans-light 
+            .box.c3t.trans-light.text
+               | c3t.trans-light.text 
+            .box.c3t.trans-light.hover
+               | c3t.trans-light.hover
+            .box.c3t.trans
+               | c3t.trans 
+            .box.c3t.trans.text
+               | c3t.trans.text
+            .box.c3t.trans.hover
+               | c3t.trans.hover 
+            .box.c3t.trans-heavy
+               | c3t.trans-heavy
+            .box.c3t.trans-heavy.text
+               | c3t.trans-heavy.text 
+            .box.c3t.trans-heavy.hover
+               | c3t.trans-heavy.hover
+     .wrapper
+            .box.qua
+               | qua     
+            .box.qua.text
+               | qua.text    
+            .box.qua.hover
+               | qua.hover     
+            .box.qua.bordered
+               | qua.bordered
+            .box.qua.trans-light
+               | qua.trans-light 
+            .box.qua.trans-light.text
+               | qua.trans-light.text 
+            .box.qua.trans-light.hover
+               | qua.trans-light.hover
+            .box.qua.trans
+               | qua.trans 
+            .box.qua.trans.text
+               | qua.trans.text
+            .box.qua.trans.hover
+               | qua.trans.hover 
+            .box.qua.trans-heavy
+               | qua.trans-heavy
+            .box.qua.trans-heavy.text
+               | qua.trans-heavy.text 
+            .box.qua.trans-heavy.hover
+               | qua.trans-heavy.hover
+     .wrapper
+            .box.c1q
+               | c1q     
+            .box.c1q.text
+               | c1q.text    
+            .box.c1q.hover
+               | c1q.hover     
+            .box.c1q.bordered
+               | c1q.bordered
+            .box.c1q.trans-light
+               | c1q.trans-light 
+            .box.c1q.trans-light.text
+               | c1q.trans-light.text 
+            .box.c1q.trans-light.hover
+               | c1q.trans-light.hover
+            .box.c1q.trans
+               | c1q.trans 
+            .box.c1q.trans.text
+               | c1q.trans.text
+            .box.c1q.trans.hover
+               | c1q.trans.hover 
+            .box.c1q.trans-heavy
+               | c1q.trans-heavy
+            .box.c1q.trans-heavy.text
+               | c1q.trans-heavy.text 
+            .box.c1q.trans-heavy.hover
+               | c1q.trans-heavy.hover   
+     .wrapper
+            .box.c2q
+               | c2q     
+            .box.c2q.text
+               | c2q.text    
+            .box.c2q.hover
+               | c2q.hover     
+            .box.c2q.bordered
+               | c2q.bordered
+            .box.c2q.trans-light
+               | c2q.trans-light 
+            .box.c2q.trans-light.text
+               | c2q.trans-light.text 
+            .box.c2q.trans-light.hover
+               | c2q.trans-light.hover
+            .box.c2q.trans
+               | c2q.trans 
+            .box.c2q.trans.text
+               | c2q.trans.text
+            .box.c2q.trans.hover
+               | c2q.trans.hover 
+            .box.c2q.trans-heavy
+               | c2q.trans-heavy
+            .box.c2q.trans-heavy.text
+               | c2q.trans-heavy.text 
+            .box.c2q.trans-heavy.hover
+               | c2q.trans-heavy.hover
+     .wrapper
+            .box.c3q
+               | c3q     
+            .box.c3q.text
+               | c3q.text    
+            .box.c3q.hover
+               | c3q.hover     
+            .box.c3q.bordered
+               | c3q.bordered
+            .box.c3q.trans-light
+               | c3q.trans-light 
+            .box.c3q.trans-light.text
+               | c3q.trans-light.text 
+            .box.c3q.trans-light.hover
+               | c3q.trans-light.hover
+            .box.c3q.trans
+               | c3q.trans 
+            .box.c3q.trans.text
+               | c3q.trans.text
+            .box.c3q.trans.hover
+               | c3q.trans.hover 
+            .box.c3q.trans-heavy
+               | c3q.trans-heavy
+            .box.c3q.trans-heavy.text
+               | c3q.trans-heavy.text 
+            .box.c3q.trans-heavy.hover
+               | c3q.trans-heavy.hover

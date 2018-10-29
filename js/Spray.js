@@ -1,91 +1,328 @@
-var navCollapse = document.querySelector(".collapse-btn");
-var navWrapper = document.querySelector(".nav-wrapper");
-var navBreakPoint = 978;
-navCollapse.addEventListener("click",toggleNav);
-navCollapse.open = function(){
-     navWrapper.baseHeight = navWrapper.scrollHeight;
-     navWrapper.style.height = navWrapper.baseHeight+"px";
-}
-navCollapse.close = function(){
-     navWrapper.style.height = null;
-}
-function toggleNav(){
-     if(toggleState(this, "open", "close")=="open"){
-          this.open();
-     }else{
-          if(open_menu){
-               open_menu.toggle();
-               open_menu.close();
-               open_menu = null;
-          }
-          this.close();
-     }
-}
+window.Spray = (() => {
+  const sprayClasses = [
+    "pri",
+    "pri.text",
+    "pri.hover",
+    "pri.bordered",
+    "pri.trans-light",
+    "pri.trans-light.text",
+    "pri.trans-light.hover",
+    "pri.trans",
+    "pri.trans.text",
+    "pri.trans.hover",
+    "pri.trans-heavy",
+    "pri.trans-heavy.text",
+    "pri.trans-heavy.hover",
+    "c1p",
+    "c1p.text",
+    "c1p.hover",
+    "c1p.bordered",
+    "c1p.trans-light",
+    "c1p.trans-light.text",
+    "c1p.trans-light.hover",
+    "c1p.trans",
+    "c1p.trans.text",
+    "c1p.trans.hover",
+    "c1p.trans-heavy",
+    "c1p.trans-heavy.text",
+    "c1p.trans-heavy.hover",
+    "c2p",
+    "c2p.text",
+    "c2p.hover",
+    "c2p.bordered",
+    "c2p.trans-light",
+    "c2p.trans-light.text",
+    "c2p.trans-light.hover",
+    "c2p.trans",
+    "c2p.trans.text",
+    "c2p.trans.hover",
+    "c2p.trans-heavy",
+    "c2p.trans-heavy.text",
+    "c2p.trans-heavy.hover",
+    "c3p",
+    "c3p.text",
+    "c3p.hover",
+    "c3p.bordered",
+    "c3p.trans-light",
+    "c3p.trans-light.text",
+    "c3p.trans-light.hover",
+    "c3p.trans",
+    "c3p.trans.text",
+    "c3p.trans.hover",
+    "c3p.trans-heavy",
+    "c3p.trans-heavy.text",
+    "c3p.trans-heavy.hover",
+    "sec",
+    "sec.text",
+    "sec.hover",
+    "sec.bordered",
+    "sec.trans-light",
+    "sec.trans-light.text",
+    "sec.trans-light.hover",
+    "sec.trans",
+    "sec.trans.text",
+    "sec.trans.hover",
+    "sec.trans-heavy",
+    "sec.trans-heavy.text",
+    "sec.trans-heavy.hover",
+    "c1s",
+    "c1s.text",
+    "c1s.hover",
+    "c1s.bordered",
+    "c1s.trans-light",
+    "c1s.trans-light.text",
+    "c1s.trans-light.hover",
+    "c1s.trans",
+    "c1s.trans.text",
+    "c1s.trans.hover",
+    "c1s.trans-heavy",
+    "c1s.trans-heavy.text",
+    "c1s.trans-heavy.hover",
+    "c2s",
+    "c2s.text",
+    "c2s.hover",
+    "c2s.bordered",
+    "c2s.trans-light",
+    "c2s.trans-light.text",
+    "c2s.trans-light.hover",
+    "c2s.trans",
+    "c2s.trans.text",
+    "c2s.trans.hover",
+    "c2s.trans-heavy",
+    "c2s.trans-heavy.text",
+    "c2s.trans-heavy.hover",
+    "c3s",
+    "c3s.text",
+    "c3s.hover",
+    "c3s.bordered",
+    "c3s.trans-light",
+    "c3s.trans-light.text",
+    "c3s.trans-light.hover",
+    "c3s.trans",
+    "c3s.trans.text",
+    "c3s.trans.hover",
+    "c3s.trans-heavy",
+    "c3s.trans-heavy.text",
+    "c3s.trans-heavy.hover",
+    "ter",
+    "ter.text",
+    "ter.hover",
+    "ter.bordered",
+    "ter.trans-light",
+    "ter.trans-light.text",
+    "ter.trans-light.hover",
+    "ter.trans",
+    "ter.trans.text",
+    "ter.trans.hover",
+    "ter.trans-heavy",
+    "ter.trans-heavy.text",
+    "ter.trans-heavy.hover",
+    "c1t",
+    "c1t.text",
+    "c1t.hover",
+    "c1t.bordered",
+    "c1t.trans-light",
+    "c1t.trans-light.text",
+    "c1t.trans-light.hover",
+    "c1t.trans",
+    "c1t.trans.text",
+    "c1t.trans.hover",
+    "c1t.trans-heavy",
+    "c1t.trans-heavy.text",
+    "c1t.trans-heavy.hover",
+    "c2t",
+    "c2t.text",
+    "c2t.hover",
+    "c2t.bordered",
+    "c2t.trans-light",
+    "c2t.trans-light.text",
+    "c2t.trans-light.hover",
+    "c2t.trans",
+    "c2t.trans.text",
+    "c2t.trans.hover",
+    "c2t.trans-heavy",
+    "c2t.trans-heavy.text",
+    "c2t.trans-heavy.hover",
+    "c3t",
+    "c3t.text",
+    "c3t.hover",
+    "c3t.bordered",
+    "c3t.trans-light",
+    "c3t.trans-light.text",
+    "c3t.trans-light.hover",
+    "c3t.trans",
+    "c3t.trans.text",
+    "c3t.trans.hover",
+    "c3t.trans-heavy",
+    "c3t.trans-heavy.text",
+    "c3t.trans-heavy.hover",
+    "qua",
+    "qua.text",
+    "qua.hover",
+    "qua.bordered",
+    "qua.trans-light",
+    "qua.trans-light.text",
+    "qua.trans-light.hover",
+    "qua.trans",
+    "qua.trans.text",
+    "qua.trans.hover",
+    "qua.trans-heavy",
+    "qua.trans-heavy.text",
+    "qua.trans-heavy.hover",
+    "c1q",
+    "c1q.text",
+    "c1q.hover",
+    "c1q.bordered",
+    "c1q.trans-light",
+    "c1q.trans-light.text",
+    "c1q.trans-light.hover",
+    "c1q.trans",
+    "c1q.trans.text",
+    "c1q.trans.hover",
+    "c1q.trans-heavy",
+    "c1q.trans-heavy.text",
+    "c1q.trans-heavy.hover",
+    "c2q",
+    "c2q.text",
+    "c2q.hover",
+    "c2q.bordered",
+    "c2q.trans-light",
+    "c2q.trans-light.text",
+    "c2q.trans-light.hover",
+    "c2q.trans",
+    "c2q.trans.text",
+    "c2q.trans.hover",
+    "c2q.trans-heavy",
+    "c2q.trans-heavy.text",
+    "c2q.trans-heavy.hover",
+    "c3q",
+    "c3q.text",
+    "c3q.hover",
+    "c3q.bordered",
+    "c3q.trans-light",
+    "c3q.trans-light.text",
+    "c3q.trans-light.hover",
+    "c3q.trans",
+    "c3q.trans.text",
+    "c3q.trans.hover",
+    "c3q.trans-heavy",
+    "c3q.trans-heavy.text",
+    "c3q.trans-heavy.hover"
+  ];
+  const Spray = function(opts) {
+    opts.tags = Spray.defaults.tags.concat(opts.tags);
+    this.options = Object.assign(Spray.defaults, opts);
+    console.dir(this.options);
+    sprayTags(this.options.tags);
+    //console.log(this.appliedTags);
+  };
+  Spray.prototype.appliedTags = [];
+  const sprayTags = (tags) => {
+    for (let i = 0; i < tags.length; i++) {
+      const tag = tags[i];
+      const selector = Object.keys(tag)[0];
+      const sprayClass = tag[selector];
+      Spray.prototype.add(selector, sprayClass);
+     // Spray.prototype.appliedTags.push(tag);
+      //sprayTag(tag);
+    }
+  };
+  //   Spray.prototype.init = () => {
+  //     console.log(`${this.options}`);
+  //   };
+  Spray.prototype.add = (selector, sprayClass) => {
+    const tag = JSON.parse((`{"${selector}":"${sprayClass}"}`));
+    Spray.prototype.appliedTags.push(tag);
+    const elems = document.querySelectorAll(selector);
+    const classes = sprayClass.split(" ");
+    for (let i = 0; i < elems.length; i++) {
+      const elem = elems[i];
+      elem.classList.add(...classes);
+    }
+    console.log("After adding: ");
+    console.log(Spray.prototype.appliedTags);
+  };
+  Spray.prototype.remove = (selector, sprayClass) => {
+    const tag = (`{"${selector}":"${sprayClass}"}`);
+    for(let i=0;i<Spray.prototype.appliedTags.length;i++){
+        const currentTag = Spray.prototype.appliedTags[i];
+        if(tag===JSON.stringify(currentTag)){
+            Spray.prototype.appliedTags.splice(i,1);
+            break;
+        }
+    }
+    const elems = document.querySelectorAll(selector);
+    const classes = sprayClass.split(" ");
+    for (let i = 0; i < elems.length; i++) {
+      const elem = elems[i];
+      elem.classList.remove(...classes);
+    }
+    console.log("After removing: ");
+    console.log(Spray.prototype.appliedTags);
+  };
 
-var menus = document.getElementsByClassName("menu-head");
-var open_menu;
-for(var i=0;i<menus.length;i++){
-     let menu = menus[i];
-     menu.addEventListener("click",toggleMenu);
-     menu.sub_menu = menu.querySelector(".sub-menu").querySelector("ul");
-     menu.close = function(){
-          this.sub_menu.style.height = null;
-          if(window.matchMedia("(max-width:"+navBreakPoint+"px)").matches){
-               navWrapper.style.height=navWrapper.baseHeight+"px";
-          }
-          if(open_menu===this){
-               open_menu = null;
-          }
-     }
-     menu.open = function(){
-          this.sub_menu.style.height = this.sub_menu.scrollHeight+"px";
-          if(window.matchMedia("(max-width:"+navBreakPoint+"px)").matches){
-               navWrapper.style.height=navWrapper.baseHeight+this.sub_menu.scrollHeight+"px";
-          }
-          open_menu = this;
-     }
-     menu.toggle = function(){
-          toggleState(this.sub_menu,"open","close");
-     }
-}
-function toggleMenu(){
-     var sub_menu = this.querySelector(".sub-menu").querySelector("ul");
-     if(toggleState(sub_menu,"open","close")=="open"){
-          if(open_menu){
-               open_menu.toggle();
-               open_menu.close();
-          }
-          this.open();
-     }else{
-          this.close();
-     }
-}
-function getState(elem){
-     return elem.getAttribute("data-state");
-}
-function toggleState(elem, open, close){
-     var state =elem.getAttribute("data-state")==open?close:open
-     elem.setAttribute("data-state", state);
-     return state;
-}
-window.addEventListener("click",function(event){
-     if(!event.target.matches(".menu-head a")){
-          if(open_menu){
-               open_menu.toggle();
-               open_menu.close();
-               open_menu = null;
-          }
-     }
-});
-window.addEventListener("resize",function(event){
-     if(open_menu){
-          open_menu.toggle();
-          open_menu.close();
-          navWrapper.style.height = null;
-          open_menu = null;
-     }
-     if(getState(navCollapse)=="open"){
-          toggleState(navCollapse, "open", "close");
-          navCollapse.close();
-     }
-});
+  Spray.prototype.widget = () => {
+    const widget = document.createElement("div");
+    widget.classList.add("spray-widget");
+    widget.appendChild(formInput("Selector:", "selector"));
+    widget.appendChild(formSelect("Spray Class:", "sprayClass", sprayClasses));
+    widget.appendChild(
+      formButtons("Add Spray Classes", "Remove Spray Classes")
+    );
+    document.body.appendChild(widget);
+    const addBtn = document.getElementById("spray-widget-add");
+    addBtn.addEventListener("click", () => {
+      const selector = widget.querySelector("[name='selector']").value;
+      const sprayClass = widget.querySelector("[name='sprayClass']").value;
+      Spray.prototype.add(selector, sprayClass);
+    });
+    const removeBtn = document.getElementById("spray-widget-remove");
+    removeBtn.addEventListener("click", () => {
+      const selector = widget.querySelector("[name='selector']").value;
+      const sprayClass = widget.querySelector("[name='sprayClass']").value;
+      Spray.prototype.remove(selector, sprayClass);
+    });
+  };
+  function formInput(label, value) {
+    const groupElem = document.createElement("div");
+    const labelElem = document.createElement("label");
+    const inputElem = document.createElement("input");
+    labelElem.textContent = label;
+    inputElem.setAttribute("name", value);
+    groupElem.appendChild(labelElem);
+    groupElem.appendChild(inputElem);
+    return groupElem;
+  }
+  function formSelect(label, value, options) {
+    const groupElem = document.createElement("div");
+    const labelElem = document.createElement("label");
+    const selectElem = document.createElement("select");
+    labelElem.textContent = label;
+    selectElem.setAttribute("name", value);
+    for (let i = 0; i < options.length; i++) {
+      const option = document.createElement("option");
+      option.value = options[i].split(".").join(" ");
+      option.textContent = options[i];
+      selectElem.appendChild(option);
+    }
+    groupElem.appendChild(labelElem);
+    groupElem.appendChild(selectElem);
+    return groupElem;
+  }
+  function formButtons(add, remove) {
+    const groupElem = document.createElement("div");
+    const addElem = document.createElement("button");
+    const removeElem = document.createElement("button");
+    addElem.textContent = add;
+    addElem.setAttribute("id", "spray-widget-add");
+    removeElem.textContent = remove;
+    removeElem.setAttribute("id", "spray-widget-remove");
+    groupElem.appendChild(addElem);
+    groupElem.appendChild(removeElem);
+    return groupElem;
+  }
+  Spray.defaults = {
+    tags: []
+  };
+  return Spray;
+})();

@@ -1,0 +1,145 @@
+// main: ../Spray.less
+
+@primary: @var-primary-color;
+@c1primary: spin(@primary, -30);
+@c2primary: spin(@primary, 30);
+@c3primary: spin(@primary, 60);
+
+@secondary: spin(@primary, 90);
+@c1secondary: spin(@secondary, -30);
+@c2secondary: spin(@secondary, 30);
+@c3secondary: spin(@secondary, 60);
+
+@tertiary: spin(@primary, 180);
+@c1tertiary: spin(@tertiary, -30);
+@c2tertiary: spin(@tertiary, 30);
+@c3tertiary: spin(@tertiary, 60);
+
+@quaternary: spin(@primary, 270);
+@c1quaternary: spin(@quaternary, -30);
+@c2quaternary: spin(@quaternary, 30);
+@c3quaternary: spin(@quaternary, 60);
+// @primary: @var-primary-color;
+// //   Shades of the primary color
+// @secondary: lighten(@primary, 15%);
+// @tertiary: darken(@primary, 15%);
+// @quaternary: mix(@tertiary, #000);
+
+// //   Starting point for the First complementary color
+// @c1primary: spin(@primary, 180);
+// //1  Shades of the first complementary color
+// @c1secondary: lighten(@c1primary, 15%);
+// @c1tertiary: darken(@c1primary, 15%);
+// @c1quaternary: mix(@c1tertiary, #000);
+
+// //   Starting point for the second complementary color
+// @c2primary: spin(@primary, 120);
+// //2  Shades of the second complementary color
+// @c2secondary: lighten(@c2primary, 15%);
+// @c2tertiary: darken(@c2primary, 15%);
+// @c2quaternary: mix(@c2tertiary, #000);
+
+// //   Starting point for the third complementary color
+// @c3primary: spin(@primary, 240);
+// //3  Shades of the third complementary color
+// @c3secondary: lighten(@c3primary, 15%);
+// @c3tertiary: darken(@c3primary, 15%);
+// @c3quaternary: mix(@c3tertiary, #000);
+
+.contrast-text-color(@color) {
+  color: contrast(@color, @quaternary, lighten(@primary, 50%), 50%);
+}
+.color-style-inner(@color) {
+  background: @color;
+  &.text {
+    background: unset;
+    color: @color;
+  }
+  &.hover:hover {
+    background: lighten(@color, 15%);
+    .contrast-text-color(lighten(@color, 15%));
+  }
+}
+//   Helper for consistent color modifications
+.color-style(@color) {
+  //background: @color;
+  .color-style-inner(@color);
+  .contrast-text-color(@color);
+  //
+  //   &.hover:hover {
+  //     background: lighten(@color, 15%);
+  //     .contrast-text-color(lighten(@color, 15%));
+  //   }
+  //
+  &.bordered {
+    border: 5px solid darken(@color, 15%);
+  }
+  &.trans-light {
+    .color-style-inner(fade(@color, 90%));
+  }
+  &.trans {
+    .color-style-inner(fade(@color, 60%));
+  }
+  &.trans-heavy {
+    .color-style-inner(fade(@color, 30%));
+  }
+  //   &.text {
+  //     background: unset;
+  //     color: @color;
+  //   }
+}
+
+/*   Selectors that apply appropriate styles for each color.
+     Any themed hoverable will be highlighted based off their design color.  */
+
+.pri {
+  .color-style(@primary);
+}
+.c1p {
+  .color-style(@c1primary);
+}
+.c2p {
+  .color-style(@c2primary);
+}
+.c3p {
+  .color-style(@c3primary);
+}
+//
+.sec {
+  .color-style(@secondary);
+}
+.c1s {
+  .color-style(@c1secondary);
+}
+.c2s {
+  .color-style(@c2secondary);
+}
+.c3s {
+  .color-style(@c3secondary);
+}
+//
+.ter {
+  .color-style(@tertiary);
+}
+.c1t {
+  .color-style(@c1tertiary);
+}
+.c2t {
+  .color-style(@c2tertiary);
+}
+.c3t {
+  .color-style(@c3tertiary);
+}
+//
+.qua {
+  .color-style(@quaternary);
+}
+.c1q {
+  .color-style(@c1quaternary);
+}
+.c2q {
+  .color-style(@c2quaternary);
+}
+.c3q {
+  .color-style(@c3quaternary);
+}
