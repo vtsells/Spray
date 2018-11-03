@@ -5,12 +5,12 @@ Things to do in CSS:
 
 Things to do in JS:
 - [x]       Functions:
-            - [x]     addToSelector(selector, sprayClass);
-            - [x]     addToSelectorLocal(parent,selector,sprayClass);
-            - [x]     addToElem(elem,sprayClass);
-            - [x]     removeFromSelector(selector,sprayClass);
-            - [x]     removeFromElem(elem,sprayClass);
-            - [x]     watchFor(parent,tags);
+- [x]       addToSelector(selector, sprayClass);
+    - [x]     addToSelectorLocal(parent,selector,sprayClass);
+    - [x]     addToElem(elem,sprayClass);
+    - [x]     removeFromSelector(selector,sprayClass);
+    - [x]     removeFromElem(elem,sprayClass);
+    - [x]     watchFor(parent,tags);
 
 - [x]       Create alpha widget for testing
 
