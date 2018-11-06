@@ -1,4 +1,4 @@
-window.Spray = (() => {
+const spray = (() => {
   const Spray = function() {};
   Spray.prototype.addToSelector = function(selector, sprayClass) {
     const elems = document.querySelectorAll(selector);
@@ -43,5 +43,5 @@ window.Spray = (() => {
     observer.observe(parent, config);
     return observer;
   };
-  return Spray;
+  return new Spray();
 })();

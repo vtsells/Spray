@@ -5,17 +5,17 @@
 @c2primary: spin(@primary, 30);
 @c3primary: spin(@primary, 60);
 
-@secondary: spin(@primary, 90);
+@secondary: @var-secondary-color;
 @c1secondary: spin(@secondary, -30);
 @c2secondary: spin(@secondary, 30);
 @c3secondary: spin(@secondary, 60);
 
-@tertiary: spin(@primary, 180);
+@tertiary: @var-tertiary-color;
 @c1tertiary: spin(@tertiary, -30);
 @c2tertiary: spin(@tertiary, 30);
 @c3tertiary: spin(@tertiary, 60);
 
-@quaternary: spin(@primary, 270);
+@quaternary: @var-quaternary-color;
 @c1quaternary: spin(@quaternary, -30);
 @c2quaternary: spin(@quaternary, 30);
 @c3quaternary: spin(@quaternary, 60);
@@ -47,7 +47,7 @@
 // @c3quaternary: mix(@c3tertiary, #000);
 
 .contrast-text-color(@color) {
-  color: contrast(@color, @quaternary, lighten(@primary, 50%), 50%);
+  color: contrast(@color,darken(@quaternary,70%),lighten(@primary,70%),65%);
 }
 .color-style-inner(@color) {
   background: @color;
@@ -59,18 +59,16 @@
     background: lighten(@color, 15%);
     .contrast-text-color(lighten(@color, 15%));
   }
+  &:focus{
+    background: lighten(@color, 15%);
+    .contrast-text-color(lighten(@color, 15%));
+  }
 }
 //   Helper for consistent color modifications
 .color-style(@color) {
   //background: @color;
   .color-style-inner(@color);
   .contrast-text-color(@color);
-  //
-  //   &.hover:hover {
-  //     background: lighten(@color, 15%);
-  //     .contrast-text-color(lighten(@color, 15%));
-  //   }
-  //
   &.bordered {
     border: 5px solid darken(@color, 15%);
   }
@@ -83,10 +81,6 @@
   &.trans-heavy {
     .color-style-inner(fade(@color, 30%));
   }
-  //   &.text {
-  //     background: unset;
-  //     color: @color;
-  //   }
 }
 
 /*   Selectors that apply appropriate styles for each color.
