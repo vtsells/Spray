@@ -209,165 +209,68 @@ window.sprayWidget = (() => {
     "c3q.trans-heavy.text",
     "c3q.trans-heavy.hover"
   ];
-  widget = spray => {
+  widget = (spray) => {
     const widget = document.createElement("div");
     widget.classList.add("spray-widget");
+    widget.appendChild(formInput("Selector:", "selector"));
+    widget.appendChild(formSelect("Spray Class:", "sprayClass", sprayClasses));
+    widget.appendChild(
+      formButtons("Add Spray Classes", "Remove Spray Classes")
+    );
+    const frame = document.createElement("iframe");
+    frame.setAttribute("src","colors.html");
+    widget.appendChild(frame);
     document.body.appendChild(widget);
-
-    includeHTML(widget, callback);
-    function callback() {
-      const target = document.getElementById("spray-widget-class-target");
-      const boxes = widget.getElementsByClassName("box");
-
-      let oldContent;
-      for (let i = 0; i < boxes.length; i++) {
-        const box = boxes[i];
-        const content = box.querySelector(".content");
-        box.removeChild(content);
-        box.addEventListener("click", () => {
-          if (oldContent !== undefined) {
-            target.replaceChild(content, oldContent);
-          } else {
-            target.appendChild(content);
-          }
-          oldContent = content;
-        });
-      }
-      const settingsArea = document.getElementById(
-        "spray-widget-settings-text"
-      );
-      boxes[0].click();
-      document
-        .getElementById("spray-widget-theme-form")
-        .addEventListener("submit", e => {
-          e.preventDefault();
-          let color = document.getElementById("spray-widget-choose-color")
-            .value;
-          let theme = document.getElementById("spray-widget-theme").value;
-          less.modifyVars({
-            "@var-primary-color": `${color}`,
-            "@var-theme": '"' + theme + '"'
-          });
-          updateSettings(settingsArea);
-        });
-
-      const addBtn = widget.querySelector("input[value='Add']");
-      addBtn.addEventListener("click", () => {
-        const selector = widget.querySelector(
-          "input[name='spray-widget-selector']"
-        ).value;
-        const sprayClass = widget.querySelector(
-          "select[name='spray-widget-spray-class']"
-        ).value;
-        spray.addToSelector(selector, sprayClass);
-        updateSettings(settingsArea);
-      });
-      const removeBtn = widget.querySelector("input[value='Remove']");
-      removeBtn.addEventListener("click", () => {
-        const selector = widget.querySelector(
-          "input[name='spray-widget-selector']"
-        ).value;
-        const sprayClass = widget.querySelector(
-          "select[name='spray-widget-spray-class']"
-        ).value;
-        spray.removeFromSelector(selector, sprayClass);
-
-        updateSettings(settingsArea);
-      });
-      const classTarget = document.getElementById("spray-widget-class-target");
-      classTarget.addEventListener("click", event => {
-        document.querySelector("#spray-widget-spray-class").value =
-          event.target.classList.value;
-      });
-      fillOpts(
-        document.querySelector("#spray-widget-spray-class"),
-        sprayClasses
-      );
-      dragElement(document.querySelector(".spray-widget"));
-    }
+    const addBtn = document.getElementById("spray-widget-add");
+    addBtn.addEventListener("click", () => {
+      const selector = widget.querySelector("[name='selector']").value;
+      const sprayClass = widget.querySelector("[name='sprayClass']").value;
+      spray.addToSelector(selector, sprayClass);
+    });
+    const removeBtn = document.getElementById("spray-widget-remove");
+    removeBtn.addEventListener("click", () => {
+      const selector = widget.querySelector("[name='selector']").value;
+      const sprayClass = widget.querySelector("[name='sprayClass']").value;
+      spray.removeFromSelector(selector, sprayClass);
+    });
   };
-  function updateSettings(textarea) {
-    textarea.value = "Less variables:\n";
-    textarea.value +=
-      "@var-primary-color:" +
-      document.getElementById("spray-widget-choose-color").value +
-      ";\n";
-    textarea.value +=
-      "@var-theme:'" +
-      document.getElementById("spray-widget-theme").value +
-      "';\n\n";
-    textarea.value += "Javascript calls:\n";
-    for (let i = 0; i < spray.selectors.length; i++) {
-      textarea.value += `spray.addToSelector('${
-        spray.selectors[i].selector
-      }':'${spray.selectors[i].class}');\n`;
-    }
+  function formInput(label, value) {
+    const groupElem = document.createElement("div");
+    const labelElem = document.createElement("label");
+    const inputElem = document.createElement("input");
+    labelElem.textContent = label;
+    inputElem.setAttribute("name", value);
+    groupElem.appendChild(labelElem);
+    groupElem.appendChild(inputElem);
+    return groupElem;
   }
-  function fillOpts(selectElem, options) {
+  function formSelect(label, value, options) {
+    const groupElem = document.createElement("div");
+    const labelElem = document.createElement("label");
+    const selectElem = document.createElement("select");
+    labelElem.textContent = label;
+    selectElem.setAttribute("name", value);
     for (let i = 0; i < options.length; i++) {
       const option = document.createElement("option");
       option.value = options[i].split(".").join(" ");
       option.textContent = options[i];
       selectElem.appendChild(option);
     }
+    groupElem.appendChild(labelElem);
+    groupElem.appendChild(selectElem);
+    return groupElem;
   }
-
-  function dragElement(elmnt) {
-    var pos1 = 0,
-      pos2 = 0,
-      pos3 = 0,
-      pos4 = 0;
-    if (elmnt.querySelector(".header")) {
-      elmnt.querySelector(".header").onmousedown = dragMouseDown;
-    } else {
-      elmnt.onmousedown = dragMouseDown;
-    }
-
-    function dragMouseDown(e) {
-      e = e || window.event;
-      e.preventDefault();
-      pos3 = e.clientX;
-      pos4 = e.clientY;
-      document.onmouseup = closeDragElement;
-      document.onmousemove = elementDrag;
-    }
-
-    function elementDrag(e) {
-      e = e || window.event;
-      e.preventDefault();
-      pos1 = pos3 - e.clientX;
-      pos2 = pos4 - e.clientY;
-      pos3 = e.clientX;
-      pos4 = e.clientY;
-      elmnt.style.top = elmnt.offsetTop - pos2 + "px";
-      elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
-    }
-
-    function closeDragElement() {
-      document.onmouseup = null;
-      document.onmousemove = null;
-    }
+  function formButtons(add, remove) {
+    const groupElem = document.createElement("div");
+    const addElem = document.createElement("button");
+    const removeElem = document.createElement("button");
+    addElem.textContent = add;
+    addElem.setAttribute("id", "spray-widget-add");
+    removeElem.textContent = remove;
+    removeElem.setAttribute("id", "spray-widget-remove");
+    groupElem.appendChild(addElem);
+    groupElem.appendChild(removeElem);
+    return groupElem;
   }
-  function includeHTML(elem, callback) {
-    const file = "spray-widget.html";
-    if (file) {
-      const xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-          if (this.status == 200) {
-            elem.innerHTML = this.responseText;
-            callback();
-          }
-          if (this.status == 404) {
-            elem.innerHTML = "Page not found.";
-          }
-        }
-      };
-      xhttp.open("GET", file, true);
-      xhttp.send();
-      return;
-    }
-  }
-
   return widget;
 })();

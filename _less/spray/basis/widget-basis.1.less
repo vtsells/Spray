@@ -1,0 +1,63 @@
+// main: ../Spray.less
+.spray-widget {
+  color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding:20px;
+  border: 2px solid #666;
+  border-radius: 20px;
+ // height: 200px;
+ // width: 200px;
+  background: rgba(255, 255, 255, .7);
+
+}
+#spray-widget-palette {
+  display: flex;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: auto;
+  width: 800px;
+  justify-content: center;
+  * {
+    box-sizing: border-box;
+  }
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: middle;
+    justify-content: center;
+  }
+
+  h2 {
+    width: 40%;
+    font-size: 16px;
+    margin: 0;
+    align-self: center;
+    text-align: right;
+    padding: 2px;
+  }
+  h5 {
+    padding: 2px;
+    margin: 0;
+    text-align: center;
+    align-self: flex-end;
+    width: 15%;
+  }
+  .box {
+    width: 25%;
+    border: 2px solid #fff;
+    cursor: pointer;
+  }
+
+  #target span {
+    display: flex;
+    box-sizing: border-box;
+    font-size: 20px;
+
+    padding: 0 10px;
+  }
+
+  #target {
+    margin-left: 20px;
+  }
+}

@@ -1,10 +1,92 @@
 // main: ../Spray.less
-.spray-widget{
-  color:#fff;
+.spray-widget {
+  color: #333;
   position: fixed;
-  top:0;
-  left:0;
-  height:200px;
-  width:200px;
-  background:rgba(0,0,0,.5);
+  top: 0;
+  left: 0;
+  //padding:20px;
+  border: 2px solid #666;
+  //border-radius: 20px;
+ // height: 200px;
+ // width: 200px;
+  //background: rgba(255, 255, 255, .7);
+  resize: both;
+  overflow:auto;
+  width:250px;
+  min-width: 250px;
+  max-height: 755px;
+  min-height:30px;
+  padding-bottom:15px;
+}
+#spray-widget-palette {
+  background:#FFFFFFee;
+  display: flex;
+  flex-direction: column;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: auto;
+  justify-content: center;
+  * {
+    box-sizing: border-box;
+  }
+  .spray-widget-colors-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    //width:116px;
+    align-items: middle;
+    justify-content: center;
+  }
+  .header{
+    cursor: move;
+  }
+  h2{
+    //color:#fff;
+    text-align: center;
+    padding:5px;
+    margin:0;
+  }
+  .box {
+    width: 25%;
+    height:20px;
+    border: 2px solid #fff;
+    cursor: pointer;
+  }
+
+  #spray-widget-class-target span {
+    display: flex;
+    box-sizing: border-box;
+    font-size: 15px;
+    padding: 2px 10px;
+  }
+  .spray-widget-controls{
+    form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    align-items: stretch;
+    }
+    label{
+      width:30%;
+      text-align: right;
+      padding:0 5px;
+      vertical-align: middle;
+    }
+    select,input{
+      
+      flex-grow:1;
+      height: unset;
+      width:70%;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      padding:5px;
+      background:#999;
+      color:#fff;
+      border:1px solid #fff;
+    }
+    input[type='button']{
+      width:50%;
+    }
+    input[type="color"]{
+      padding:0;
+      min-height:30px;
+    }
+  }
 }

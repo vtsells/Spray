@@ -1,24 +1,22 @@
 // main: ../Spray.less
 
-@primary: @var-primary-color;
-@c1primary: spin(@primary, -30);
-@c2primary: spin(@primary, 30);
-@c3primary: spin(@primary, 60);
 
-@secondary: @var-secondary-color;
-@c1secondary: spin(@secondary, -30);
-@c2secondary: spin(@secondary, 30);
-@c3secondary: spin(@secondary, 60);
+.import-theme(@theme) when (@theme = "sepia") {
+  @import "./sepia-basis.less";
+}
+.import-theme(@theme) when (@theme = "shades") {
+  @import "./shades-basis.less";
+}
+.import-theme(@theme) when (@theme = "contrast") {
+  @import "./contrast-basis.less";
+}
+.import-theme(@theme) {
+}
+.import-theme(@var-theme);
+//@import "./@{var-theme-basis}.less";
+//@import "./contrast-basis.less";
+//@import "./shades-basis.less";
 
-@tertiary: @var-tertiary-color;
-@c1tertiary: spin(@tertiary, -30);
-@c2tertiary: spin(@tertiary, 30);
-@c3tertiary: spin(@tertiary, 60);
-
-@quaternary: @var-quaternary-color;
-@c1quaternary: spin(@quaternary, -30);
-@c2quaternary: spin(@quaternary, 30);
-@c3quaternary: spin(@quaternary, 60);
 // @primary: @var-primary-color;
 // //   Shades of the primary color
 // @secondary: lighten(@primary, 15%);
@@ -47,21 +45,32 @@
 // @c3quaternary: mix(@c3tertiary, #000);
 
 .contrast-text-color(@color) {
-  color: contrast(@color,darken(@quaternary,70%),lighten(@primary,70%),65%);
+  color: contrast(
+    @color,
+    darken(@quaternary, 70%),
+    lighten(@primary, 70%),
+    65%
+  );
 }
 .color-style-inner(@color) {
   background: @color;
+
   &.text {
     background: unset;
     color: @color;
   }
   &.hover:hover {
     background: lighten(@color, 15%);
-    .contrast-text-color(lighten(@color, 15%));
+    //.contrast-text-color(lighten(@color, 15%));
   }
-  &:focus{
+
+  &.hover.text:hover {
+    //background: unset;
+    color: lighten(@color, 15%);
+  }
+  &:focus {
     background: lighten(@color, 15%);
-    .contrast-text-color(lighten(@color, 15%));
+    //.contrast-text-color(lighten(@color, 15%));
   }
 }
 //   Helper for consistent color modifications
@@ -85,7 +94,9 @@
 
 /*   Selectors that apply appropriate styles for each color.
      Any themed hoverable will be highlighted based off their design color.  */
-
+.no-bg {
+  background: unset !important;
+}
 .pri {
   .color-style(@primary);
 }
@@ -99,6 +110,8 @@
   .color-style(@c3primary);
 }
 //
+
+
 .sec {
   .color-style(@secondary);
 }
@@ -112,6 +125,8 @@
   .color-style(@c3secondary);
 }
 //
+
+
 .ter {
   .color-style(@tertiary);
 }
@@ -125,6 +140,8 @@
   .color-style(@c3tertiary);
 }
 //
+
+
 .qua {
   .color-style(@quaternary);
 }
