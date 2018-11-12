@@ -1,6 +1,7 @@
 <div id="spray-widget-palette">
-  <h2 class="header">Spray Palette</h2>
-  <div class="spray-widget-colors-wrapper">
+  <h2 class="header pri hover bordered">Spray Palette</h2>
+  <div id="spray-widget-colors-wrapper" class="spray-widget-section">
+      <h3 style="width:100%">Colors</h3>
     <div class="box pri">
       <div class="content">
         <span class="pri ">pri</span> <span class="pri text">pri.text</span>
@@ -260,9 +261,10 @@
         <span class="c3q trans-heavy hover">c3q.trans-heavy.hover</span>
       </div>
     </div>
+    <div id="spray-widget-class-target"></div>
   </div>
-  <div id="spray-widget-class-target"></div>
-  <div class="spray-widget-controls">
+ 
+  <div id="spray-widget-controls" class="spray-widget-section">
     <h3>Customize</h3>
     <form id="spray-widget-theme-form">
       <label for="spray-widget-theme">Theme</label>
@@ -280,7 +282,7 @@
         id="spray-widget-choose-color"
         value="#71c4e6"
       />
-      <input type="submit" value="Apply" />
+      <input type="submit" value="Apply" class="sec hover bordered"/>
     </form>
     <h3>Add/Remove Classes</h3>
     <form id="spray-widget-theme-form">
@@ -293,11 +295,15 @@
         name="spray-widget-selector"
         id="spray-widget-selector"
       />
-      <input type="button" value="Add" /> <input type="button" value="Remove" />
+      <input type="button" value="Add" class="sec hover bordered"/>
+      <label for="spray-widget-remove-selector-list">Applied Classes</label>
+      <select name="spray-widget-remove-selector-list" id="spray-widget-remove-selector-list">
+      </select>
+      <input type="button" value="Remove" class="sec hover bordered"/>
     </form>
   </div>
-  <div id="spray-widget-current-settings">
+  <div id="spray-widget-current-settings" class="spray-widget-section">
     <h3>Current Settings</h3>
-    <textarea name="spray-widget-settings-text" id="spray-widget-settings-text" cols="30" rows="10" style="width:100%;max-width:100%"></textarea>
+    <textarea name="spray-widget-settings-text" id="spray-widget-settings-text" cols="30" rows="10" style="width:100%;"></textarea>
   </div>
 </div>

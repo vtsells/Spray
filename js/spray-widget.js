@@ -237,6 +237,7 @@ window.sprayWidget = (() => {
         "spray-widget-settings-text"
       );
       boxes[0].click();
+      updateUIElements(settingsArea);
       document
         .getElementById("spray-widget-theme-form")
         .addEventListener("submit", e => {
@@ -248,7 +249,7 @@ window.sprayWidget = (() => {
             "@var-primary-color": `${color}`,
             "@var-theme": '"' + theme + '"'
           });
-          updateSettings(settingsArea);
+          updateUIElements(settingsArea);
         });
 
       const addBtn = widget.querySelector("input[value='Add']");
@@ -260,33 +261,34 @@ window.sprayWidget = (() => {
           "select[name='spray-widget-spray-class']"
         ).value;
         spray.addToSelector(selector, sprayClass);
-        updateSettings(settingsArea);
+
+        updateUIElements(settingsArea);
       });
       const removeBtn = widget.querySelector("input[value='Remove']");
       removeBtn.addEventListener("click", () => {
-        const selector = widget.querySelector(
-          "input[name='spray-widget-selector']"
-        ).value;
-        const sprayClass = widget.querySelector(
-          "select[name='spray-widget-spray-class']"
-        ).value;
+        const selectedOption = JSON.parse(
+          widget.querySelector("#spray-widget-remove-selector-list").value
+        );
+        const selector = selectedOption.selector;
+        const sprayClass = selectedOption.class;
         spray.removeFromSelector(selector, sprayClass);
 
-        updateSettings(settingsArea);
+        updateUIElements(settingsArea);
       });
       const classTarget = document.getElementById("spray-widget-class-target");
       classTarget.addEventListener("click", event => {
-        document.querySelector("#spray-widget-spray-class").value =
-          event.target.classList.value;
+        document.querySelector(
+          "#spray-widget-spray-class"
+        ).value = event.target.classList.value.trim();
       });
-      fillOpts(
+      fillClasses(
         document.querySelector("#spray-widget-spray-class"),
         sprayClasses
       );
       dragElement(document.querySelector(".spray-widget"));
     }
   };
-  function updateSettings(textarea) {
+  function updateUIElements(textarea) {
     textarea.value = "Less variables:\n";
     textarea.value +=
       "@var-primary-color:" +
@@ -302,12 +304,28 @@ window.sprayWidget = (() => {
         spray.selectors[i].selector
       }':'${spray.selectors[i].class}');\n`;
     }
+
+    fillAppliedClasses(
+      document.querySelector("#spray-widget-remove-selector-list"),
+      spray.selectors
+    );
   }
-  function fillOpts(selectElem, options) {
+  function fillClasses(selectElem, options) {
     for (let i = 0; i < options.length; i++) {
       const option = document.createElement("option");
       option.value = options[i].split(".").join(" ");
       option.textContent = options[i];
+      selectElem.appendChild(option);
+    }
+  }
+  function fillAppliedClasses(selectElem, options) {
+    for (a in selectElem.options) {
+      selectElem.options.remove(0);
+    }
+    for (let i = 0; i < options.length; i++) {
+      const option = document.createElement("option");
+      option.value = JSON.stringify(options[i]);
+      option.textContent = options[i].selector + " → " + options[i].class;
       selectElem.appendChild(option);
     }
   }
@@ -350,23 +368,21 @@ window.sprayWidget = (() => {
   }
   function includeHTML(elem, callback) {
     const file = "spray-widget.html";
-    if (file) {
-      const xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-          if (this.status == 200) {
-            elem.innerHTML = this.responseText;
-            callback();
-          }
-          if (this.status == 404) {
-            elem.innerHTML = "Page not found.";
-          }
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4) {
+        if (this.status == 200) {
+          elem.innerHTML = this.responseText;
+          callback();
         }
-      };
-      xhttp.open("GET", file, true);
-      xhttp.send();
-      return;
-    }
+        if (this.status == 404) {
+          elem.innerHTML = "Page not found.";
+        }
+      }
+    };
+    xhttp.open("GET", file, true);
+    xhttp.send();
+    return;
   }
 
   return widget;

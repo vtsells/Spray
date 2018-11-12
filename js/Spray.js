@@ -2,7 +2,7 @@ const spray = (() => {
   const Spray = function() {};
   Spray.prototype.selectors = [];
   Spray.prototype.addToSelector = function(selector, sprayClass) {
-    
+    if(!selector) return;
     this.selectors.push({selector:selector, class:sprayClass})
     const elems = document.querySelectorAll(selector);
     for (let i = 0; i < elems.length; i++) {
@@ -24,7 +24,7 @@ const spray = (() => {
   };
   Spray.prototype.removeFromSelector = function(selector, sprayClass) {
     const elems = document.querySelectorAll(selector);
-    this.selectors = this.selectors.filter(a=>(a.selector!==selector && a.class!==sprayClass));
+    this.selectors = this.selectors.filter(a=>(a.selector!==selector || a.class!==sprayClass));
     for (let i = 0; i < elems.length; i++) {
       const elem = elems[i];
       this.removeFromElem(elem, sprayClass);
